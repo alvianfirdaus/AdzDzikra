@@ -19,7 +19,12 @@
         <div class="container">
             <img class="navbar-img" src="/landing/images/adzdzikra.png" sizes="32x32">
             <p class="navbar-logo-text">Ponpes Adz-Dzikra</p>
-
+    
+            <!-- Button Mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item active">
@@ -31,9 +36,21 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#one">Pengumuman</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#one">Dropdown Ini Pendidikan</a>
+                    
+                    <!-- Dropdown Pendidikan -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            Pendidikan
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Pendidikan SD</a></li>
+                            <li><hr class="dropdown-divider" style="border-top: 1px solid rgba(255, 255, 255, 0.3);"></li>
+                            <li><a class="dropdown-item" href="#">Pendidikan SMP</a></li>
+                            <li><hr class="dropdown-divider" style="border-top: 1px solid rgba(255, 255, 255, 0.3);"></li>
+                            <li><a class="dropdown-item" href="#">Pendidikan PONDOK</a></li>
+                        </ul>
                     </li>
+    
                     <li class="nav-item">
                         <a class="nav-link" href="#tutors">Tim IT</a>
                     </li>
@@ -44,7 +61,8 @@
             </div>
         </div>
     </nav>
-
+    
+    
     {{-- Header Welcoming Section (Elang) --}}
     <header class="mast-hero">
         <div class="container">

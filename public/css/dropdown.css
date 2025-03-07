@@ -1,0 +1,46 @@
+/* background dropdown */
+.dropdown-menu {
+    background-color: #343a40;
+    width: auto;
+    margin: 0 auto;
+    padding: 5px;
+    padding-right: 11px;
+}
+
+/* Text Dropdown */
+.dropdown-item {
+    color: white;
+    text-align: center;
+    padding: 0 auto;
+    display: block;
+}
+
+/* Efek hover Dropdown */
+.dropdown-item:hover {
+    background-color: rgb(36, 214, 80) !important;
+    color: white;
+    border-radius: 3px;
+}
+
+/* Responsive Dropdown */
+@media (max-width: 768px) {
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .dropdown-menu {
+        text-align: center;
+        width: 100%;
+        margin-top: 0;
+        max-width: 200px;
+    }
+
+    .dropdown-item {
+        padding: 12px;
+    }
+    
+    .navbar-toggler {
+        background-color: white !important;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+}

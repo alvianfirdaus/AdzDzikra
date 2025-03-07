@@ -22,6 +22,10 @@ Route::get('/login', [HomeController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [HomeController::class, 'login']);
 Route::post('/logout', [HomeController::class, 'logout'])->name('logout');
 
+// Sub Login routes (FAIL)
+Route::get('/login/sd', [HomeController::class, 'showLoginForm'])->name('login');
+Route::post('/login/sd', [HomeController::class, 'login']);
+
 // Register routes
 Route::get('/register', [HomeController::class, 'showRegisterForm'])->name('register');
 Route::post('/register', [HomeController::class, 'register']);
