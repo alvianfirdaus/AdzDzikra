@@ -19,12 +19,14 @@
         <div class="container">
             <img class="navbar-img" src="/landing/images/adzdzikra.png" sizes="32x32">
             <p class="navbar-logo-text">Ponpes Adz-Dzikra</p>
-    
+
             <!-- Button Mobile -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-    
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item active">
@@ -36,21 +38,26 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#one">Pengumuman</a>
                     </li>
-                    
+
                     <!-- Dropdown Pendidikan -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown">
                             Pendidikan
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Pendidikan SD</a></li>
-                            <li><hr class="dropdown-divider" style="border-top: 1px solid rgba(255, 255, 255, 0.3);"></li>
-                            <li><a class="dropdown-item" href="#">Pendidikan SMP</a></li>
-                            <li><hr class="dropdown-divider" style="border-top: 1px solid rgba(255, 255, 255, 0.3);"></li>
-                            <li><a class="dropdown-item" href="#">Pendidikan PONDOK</a></li>
+                            <li><a class="dropdown-item" href="{{ route('landing.sd') }}">Pendidikan SD</a></li>
+                            <li>
+                                <hr class="dropdown-divider" style="border-top: 1px solid rgba(255, 255, 255, 0.3);">
+                            </li>
+                            <li><a class="dropdown-item" href="{{ route('landing.smp') }}">Pendidikan SMP</a></li>
+                            <li>
+                                <hr class="dropdown-divider" style="border-top: 1px solid rgba(255, 255, 255, 0.3);">
+                            </li>
+                            <li><a class="dropdown-item" href="{{ route('landing.ma') }}">Pendidikan MA</a></li>
                         </ul>
                     </li>
-    
+
                     <li class="nav-item">
                         <a class="nav-link" href="#tutors">Tim IT</a>
                     </li>
@@ -61,8 +68,8 @@
             </div>
         </div>
     </nav>
-    
-    
+
+
     {{-- Header Welcoming Section (Elang) --}}
     <header class="mast-hero">
         <div class="container">
@@ -79,9 +86,10 @@
     </marquee>
     {{-- Deadline Section --}}
     <div class="page-section">
-    <script src="https://cdn.logwork.com/widget/countdown.js"></script>
-        <a href="https://logwork.com/countdown-zaeb" class="countdown-timer" data-style="circles" 
-            data-timezone="Asia/Jakarta" data-date="2025-06-28 15:00" data-background="#283845" data-digitscolor="#283845">Deadline Pendaftaran</a>
+        <script src="https://cdn.logwork.com/widget/countdown.js"></script>
+        <a href="https://logwork.com/countdown-zaeb" class="countdown-timer" data-style="circles"
+            data-timezone="Asia/Jakarta" data-date="2025-06-28 15:00" data-background="#283845"
+            data-digitscolor="#283845">Deadline Pendaftaran</a>
     </div>
 
     {{-- About Sekolah (Elang) --}}
@@ -182,36 +190,36 @@
                 <div class="col-6">
                     <div class="owl-carousel tk-carousel owl-theme">
                         @foreach ($gallery as $galeri)
-                        @if($galeri->kategori_galeri == "TK")
-                            <div class="item">
-                                <div class="card">
-                                    <img src="{{ asset("storage/gallery/$galeri->gambar_galeri") }}"
-                                        alt="Pengumuman Image" height="250px" width="300px">
-                                    <div class="card-body">
-                                        <h5>{{ $galeri->kategori_galeri }}</h5>
-                                        <span>{{ $galeri->keterangan_galeri }}</span>
+                            @if ($galeri->kategori_galeri == 'TK')
+                                <div class="item">
+                                    <div class="card">
+                                        <img src="{{ asset("storage/gallery/$galeri->gambar_galeri") }}"
+                                            alt="Pengumuman Image" height="250px" width="300px">
+                                        <div class="card-body">
+                                            <h5>{{ $galeri->kategori_galeri }}</h5>
+                                            <span>{{ $galeri->keterangan_galeri }}</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        @endif
+                            @endif
                         @endforeach
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="owl-carousel paud-carousel owl-theme">
                         @foreach ($gallery as $galeri)
-                        @if($galeri->kategori_galeri == "Paud")
-                            <div class="item">
-                                <div class="card">
-                                    <img src="{{ asset("storage/gallery/$galeri->gambar_galeri") }}"
-                                        alt="Pengumuman Image" height="250px" width="300px">
-                                    <div class="card-body">
-                                        <h5>{{ $galeri->kategori_galeri }}</h5>
-                                        <span>{{ $galeri->keterangan_galeri }}</span>
+                            @if ($galeri->kategori_galeri == 'Paud')
+                                <div class="item">
+                                    <div class="card">
+                                        <img src="{{ asset("storage/gallery/$galeri->gambar_galeri") }}"
+                                            alt="Pengumuman Image" height="250px" width="300px">
+                                        <div class="card-body">
+                                            <h5>{{ $galeri->kategori_galeri }}</h5>
+                                            <span>{{ $galeri->keterangan_galeri }}</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        @endif
+                            @endif
                         @endforeach
                     </div>
                 </div>
@@ -263,18 +271,27 @@
                     <p class="deskripsi">Tutorial Pendaftaran</p>
                     <h2>Anak Saleh</h2>
                 </div>
-                <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="534"
-                    height="300" type="text/html"
-                    src="https://www.youtube.com/embed/7Hr7sxQ6vUg?autoplay=0&fs=0&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0&origin=https://youtubeembedcode.com"><div><small><a href="https://youtubeembedcode.com/en">
-                    <div><small><a href="https://youtubeembedcode.com/pl/">youtubeembedcode pl</a></small></div>
-                    <div><small><a href="https://allabeviljas.se/">smslån som beviljar alla</a></small></div>
-                    <div><small><a href="https://youtubeembedcode.com/pl/">youtubeembedcode pl</a></small></div>
-                    <div><small><a href="https://skipborules.com/">skipborules.com</a></small></div>
-                    <div><small><a href="https://youtubeembedcode.com/nl/">youtubeembedcode nl</a></small></div>
-                    <div><small><a href="https://xn--snabbln5000-28a.com/lana-2000/">låna 2000</a></small></div>
-                    <div><small><a href="https://youtubeembedcode.com/en">youtubeembedcode.com/en/</a></small></div>
-                    <div><small><a href="https://nouc.se/sms-lan/handelsbanken/">sms lån handelsbanken</a></small>
-                    </div>
+                <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="534" height="300"
+                    type="text/html"
+                    src="https://www.youtube.com/embed/7Hr7sxQ6vUg?autoplay=0&fs=0&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0&origin=https://youtubeembedcode.com">
+                    <div><small><a href="https://youtubeembedcode.com/en">
+                                <div><small><a href="https://youtubeembedcode.com/pl/">youtubeembedcode pl</a></small>
+                                </div>
+                                <div><small><a href="https://allabeviljas.se/">smslån som beviljar alla</a></small>
+                                </div>
+                                <div><small><a href="https://youtubeembedcode.com/pl/">youtubeembedcode pl</a></small>
+                                </div>
+                                <div><small><a href="https://skipborules.com/">skipborules.com</a></small></div>
+                                <div><small><a href="https://youtubeembedcode.com/nl/">youtubeembedcode nl</a></small>
+                                </div>
+                                <div><small><a href="https://xn--snabbln5000-28a.com/lana-2000/">låna 2000</a></small>
+                                </div>
+                                <div><small><a
+                                            href="https://youtubeembedcode.com/en">youtubeembedcode.com/en/</a></small>
+                                </div>
+                                <div><small><a href="https://nouc.se/sms-lan/handelsbanken/">sms lån
+                                            handelsbanken</a></small>
+                                </div>
                 </iframe>
             </div>
 

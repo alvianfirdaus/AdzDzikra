@@ -13,18 +13,23 @@ use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\PanitiaController;
-
+use App\Http\Controllers\ControllerSiswa\MaController;
+use App\Http\Controllers\ControllerSiswa\SdController;
+use App\Http\Controllers\ControllerSiswa\SmpController;
 
 Route::get('/', [LandingController::class, 'index']);
+
+// // Sub routes landing page
+Route::prefix('landingpage')->group(function () {
+    Route::get('/sd', [SdController::class, 'index'])->name('landing.sd');
+    Route::get('/ma', [MaController::class, 'index'])->name('landing.ma');    
+    Route::get('/smp', [SmpController::class, 'index'])->name('landing.smp');
+});
 
 // Login routes
 Route::get('/login', [HomeController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [HomeController::class, 'login']);
 Route::post('/logout', [HomeController::class, 'logout'])->name('logout');
-
-// Sub Login routes (FAIL)
-Route::get('/login/sd', [HomeController::class, 'showLoginForm'])->name('login');
-Route::post('/login/sd', [HomeController::class, 'login']);
 
 // Register routes
 Route::get('/register', [HomeController::class, 'showRegisterForm'])->name('register');

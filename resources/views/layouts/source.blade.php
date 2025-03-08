@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('css/dropdown.css') }}">
 
+    {{-- Asset Konten Sd, Smp, Ma --}}
+    <link rel="stylesheet" href="{{ asset('css/konten.css') }}">
     {{-- Owl Carousel --}}
     <link rel="stylesheet" href="{{ asset('landing/css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('landing/css/owl.theme.default.min.css') }}">

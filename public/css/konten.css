@@ -1,0 +1,138 @@
+.box-luar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.border-dalam {
+    display: flex;
+    background: #f8f9fa;
+    border: 1px solid #154c83;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    width: 100%;
+}
+
+.text-konten {
+    flex: 1;
+    padding: 20px;
+}
+
+.text-konten h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.text-konten p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.gambar-konten {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gambar-konten img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.visi-misi-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: #f8f9fa;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    gap: 20px;
+}
+
+.visi, .misi {
+    flex: 1;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.visi h2, .misi h2 {
+    color: #154c83;
+    font-size: 24px;
+    border-bottom: 2px solid #154c83;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.button-container {
+    margin-top: 20px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: #198754; /* Warna hijau */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #157347;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .visi-misi-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .visi, .misi {
+        padding: 15px;
+        width: 100%;
+    }
+
+    .border-dalam {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .text-konten {
+        padding: 10px;
+    }
+
+    .text-konten h2 {
+        font-size: 20px;
+    }
+
+    .text-konten p {
+        font-size: 14px;
+    }
+
+    .gambar-konten {
+        margin-top: 10px;
+    }
+
+    .gambar-konten img {
+        width: 80%;
+    }
+
+    .button-container {
+        text-align: center;
+    }
+}

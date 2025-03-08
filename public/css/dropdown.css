@@ -22,7 +22,7 @@
     border-radius: 3px;
 }
 
-/* Responsive Dropdown */
+/* Resposive */
 @media (max-width: 768px) {
     .navbar-nav {
         text-align: center;
