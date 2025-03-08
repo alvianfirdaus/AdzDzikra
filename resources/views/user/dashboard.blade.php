@@ -1,13 +1,13 @@
 @extends('layouts.userapp')
-<title>Tabel Admin | Shaleh </title>
-<link rel="icon" href="{{ asset('dist/img/Logo Shaleh.png') }}">
+<title>Tabel Admin | Adz-Dzikra </title>
+<link rel="icon" href="{{ asset('dist/img/adzdzikra.png') }}">
 @extends('layouts.usersidebar')
 
 <body class="hold-transition sidebar-mini">
 
     <!-- Preloader -->
     <div class="preloader flex-column justify-content-center align-items-center">
-        <img class="animation__shake" src="{{ asset('/') }}dist/img/Logo Shaleh.png" alt="AdminLTELogo" height="170"
+        <img class="animation__shake" src="{{ asset('/') }}dist/img/adzdzikra.png" alt="AdminLTELogo" height="170"
             width="195">
     </div>
 

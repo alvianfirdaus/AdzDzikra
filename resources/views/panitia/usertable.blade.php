@@ -1,6 +1,6 @@
 @extends('admin.app')
-<title>Tabel User | Shaleh </title>
-<link rel="icon" href="{{ asset('dist/img/Logo Shaleh.png') }}">
+<title>Tabel User | Adz-Dzikra </title>
+<link rel="icon" href="{{ asset('dist/img/adzdzikra.png') }}">
 @extends('panitia.sidebar')
 <!--
 `body` tag options:
@@ -16,7 +16,7 @@
 
     <!-- Preloader -->
     <div class="preloader flex-column justify-content-center align-items-center">
-        <img class="animation__shake" src="{{ asset('/') }}dist/img/Logo Shaleh.png" alt="AdminLTELogo" height="170"
+        <img class="animation__shake" src="{{ asset('/') }}dist/img/adzdzikra.png" alt="AdminLTELogo" height="170"
             width="195">
     </div>
     <div class="wrapper">
@@ -58,7 +58,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Table User</h1>
+                            <h1 class="m-0">Table Wali Santri</h1>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
@@ -77,7 +77,7 @@
                                             <div class="col-md-9">
                                                 <button data-toggle="modal" data-target="#createUser"
                                                     class="btn btn-icon btn-primary"><i class="fas fa-user-plus"></i>
-                                                    Tambah User
+                                                    Tambah Wali Santri
                                                 </button>
                                             </div>
                                             <div class="col-md-5">

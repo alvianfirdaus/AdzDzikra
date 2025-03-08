@@ -1,6 +1,6 @@
 @extends('admin.app')
-<title>Dashboard Panitia | Shaleh</title>
-<link rel="icon" href="{{ asset('dist/img/Logo Shaleh.png') }}">
+<title>Dashboard Panitia | Adz-Dzikra</title>
+<link rel="icon" href="{{ asset('dist/img/adzdzikra.png') }}">
 @extends('panitia.sidebar')
 <!--
 `body` tag options:
@@ -16,7 +16,7 @@
 
     <!-- Preloader -->
     <div class="preloader flex-column justify-content-center align-items-center">
-        <img class="animation__shake" src="{{ asset('/') }}dist/img/Logo Shaleh.png" alt="AdminLTELogo" height="170"
+        <img class="animation__shake" src="{{ asset('/') }}dist/img/adzdzikra.png" alt="AdminLTELogo" height="170"
             width="195">
     </div>
 
@@ -96,7 +96,7 @@
                             <div class="small-box bg-warning">
                                 <div class="inner">
                                     <h3>{{ $userCount }}</h3>
-                                    <p>User</p>
+                                    <p>Wali Santri</p>
                                 </div>
                                 <div class="icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75"
@@ -105,6 +105,23 @@
                                     </svg>
                                 </div>
                                 <a href="{{ route('table', ['table' => 'user']) }}" class="small-box-footer">More info
+                                    <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-blue">
+                                <div class="inner">
+                                    <h3>{{ $siswaCount }}</h3>
+                                    <p>Siswa SMP & MA</p>
+                                </div>
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75"
+                                        fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                                        <!-- SVG path -->
+                                    </svg>
+                                </div>
+                                <a href="{{ route('panitia.siswa') }}" class="small-box-footer">More info
                                     <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>

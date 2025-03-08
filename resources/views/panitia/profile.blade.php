@@ -1,6 +1,6 @@
 @extends('layouts.header_user')
 <title>Profile | Shaleh</title>
-<link rel="icon" type="image/icon" sizes="32x32" href="/landing/images/LogoShaleh.png">
+<link rel="icon" type="image/icon" sizes="32x32" href="/landing/images/adzdzikra.png">
 @section('content2')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <section class="vh-100 d-flex align-items-center" style="background-color: #f4f5f7;">

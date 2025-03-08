@@ -1,6 +1,6 @@
 @extends('admin.app')
-<title>Dashboard Admin | Shaleh</title>
-<link rel="icon" href="{{ asset('dist/img/Logo Shaleh.png') }}">
+<title>Dashboard Admin | Adz-Dzikra</title>
+<link rel="icon" href="{{ asset('dist/img/adzdzikra.png') }}">
 @extends('admin.sidebar')
 <!--
 `body` tag options:
@@ -16,7 +16,7 @@
 
     <!-- Preloader -->
     <div class="preloader flex-column justify-content-center align-items-center">
-        <img class="animation__shake" src="{{ asset('/') }}dist/img/Logo Shaleh.png" alt="AdminLTELogo" height="170"
+        <img class="animation__shake" src="{{ asset('/') }}dist/img/adzdzikra.png" alt="AdminLTELogo" height="170"
             width="195">
     </div>
 
@@ -113,7 +113,7 @@
                             <div class="small-box bg-warning">
                                 <div class="inner">
                                     <h3>{{ $userCount }}</h3>
-                                    <p>User</p>
+                                    <p>Wali Santri</p>
                                 </div>
                                 <div class="icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75"

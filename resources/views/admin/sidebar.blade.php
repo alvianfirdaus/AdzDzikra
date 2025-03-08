@@ -6,9 +6,9 @@
     <!-- Brand Logo -->
 
     <a href="{{ route('admin.dashboard') }}" class="brand-link">
-        <img src="{{ asset('/') }}dist/img/Logo Shaleh.png" alt="AdminLTE Logo"
+        <img src="{{ asset('/') }}dist/img/adzdzikra.png" alt="AdminLTE Logo"
             class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">Anak Shaleh</span>
+        <span class="brand-text font-weight-light">Ponpes Adz-Dzikra</span>
     </a>
 
     <!-- Sidebar -->
@@ -57,7 +57,7 @@
                         <li class="nav-item">
                             <a href="{{ route('table', ['table' => 'user']) }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>User</p>
+                                <p>Wali Santri</p>
                             </a>
                         </li>
                         <li class="nav-item">

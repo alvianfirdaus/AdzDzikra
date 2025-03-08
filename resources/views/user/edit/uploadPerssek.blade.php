@@ -18,11 +18,7 @@
                             value="{{ old('pendaftar_id', $pembayaran->pendaftar_id) }}" required autofocus>
 
                         <div class="form-group">
-                            @if ($pembayaran->pendaftar->jenjangPend == 'TK')
-                                <img src="/ppdb/TK.png" alt="" width="465px" height="550px">
-                            @else
-                                <img src="/ppdb/Paud.png" alt="" width="465px" height="550px">
-                            @endif
+                                <img src="/ppdb/uangpangkalsekolah.png" alt="" width="465px" height="550px">
                         </div>
 
                         <div class="form-group">

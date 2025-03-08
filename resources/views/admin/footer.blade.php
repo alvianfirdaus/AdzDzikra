@@ -1,7 +1,8 @@
 <footer class="footer py-4">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-4 text-lg-start">Copyright &copy;Tim IT Kel2. 2023</div>
+        <div class="col-lg-4 text-lg-start">Copyright &copy; Tim IT Ponpes Adz-Dzikra 2025 - <span id="year"></span></div>
+        <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
             <div class="col-lg-4 my-3 my-lg-0">
                 <a class="btn btn-light mx-2 ft-twitter" href="https://twitter.com/AnakSalehMalang?s=20"
                     aria-label="Twitter"></a>
@@ -15,7 +16,7 @@
                 <div id="popup">
                     <div class="window">
                         <a href="#" class="close-button" title="Close">X</a>
-                        <h6>Prifacy Policy</h6>
+                        <h6>Prifvcy Policy</h6>
                         <p>
                             <h7>memastikan bahwa hanya Anda yang dapat mengetahui password akun anda, dan tidak ada
                                 siapa pun di antaranya, bahkan developer pun. Hal ini karena, dengan enkripsi secara

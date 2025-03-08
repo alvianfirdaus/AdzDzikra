@@ -12,13 +12,13 @@
         <table border="0" width="100%" style="text-align:center;">
             <tbody>
                 <tr>
-                    <td align="left"><img src="dist/img/Logo Shaleh.png" width="130px"
+                    <td align="left"><img src="dist/img/adzdzikra.png" width="130px"
                             alt="Logo Shaleh"></td>
                     <td align="center" width="150%">
                         <div>
-                            <span style="font-family: 'Times New Roman'; font-size:16pt">YAYASAN ANAK SHALEH</span><br>
-                            <span style="font-family: 'Times New Roman'; font-size:16pt"><strong>TK | PAUD ANAK SHALEH</strong></span><br>
-                            <span style="font-family: 'Times New Roman'; font-size:14pt">Mojolangu, Kec. Lowokwaru, Kota Malang, Jawa Timur 65143</span><br>
+                            <span style="font-family: 'Times New Roman'; font-size:16pt">YAYASAN ADZ DZIKRA</span><br>
+                            <span style="font-family: 'Times New Roman'; font-size:16pt"><strong>YAYASAN ADZ DZIKRA</strong></span><br>
+                            <span style="font-family: 'Times New Roman'; font-size:14pt">alamattttttt</span><br>
                             <h6><a target="_blank"
                                 href="https://www.sekolahanaksaleh.sch.id-…n-dompdf-laravel/">www.sekolahanaksaleh.sch.id</a>
                         </div>

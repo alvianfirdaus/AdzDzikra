@@ -1,6 +1,6 @@
 @extends('layouts.header_user')
-<title>Edit Profile | Shaleh</title>
-<link rel="icon" type="image/icon" sizes="32x32" href="/landing/images/LogoShaleh.png">
+<title>Edit Profile | Adz-Dzikra</title>
+<link rel="icon" type="image/icon" sizes="32x32" href="/landing/images/adzdzikra.png">
 @section('content2')
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">

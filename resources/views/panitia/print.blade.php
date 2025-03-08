@@ -12,7 +12,7 @@
         <table border="0" width="100%" style="text-align:center;">
             <tbody>
                 <tr>
-                    <td align="left"><img src="dist/img/Logo Shaleh.png" width="130px"
+                    <td align="left"><img src="dist/img/adzdzikra.png" width="130px"
                             alt="Logo Shaleh"></td>
                     <td align="center" width="150%">
                         <div>

@@ -93,7 +93,7 @@
     
             </div>
             <div class="gambar-konten">
-                <img src="{{ asset('img/sd.jpg') }}" alt="Gambar SD">
+                <img src="{{ asset('img/bos.png') }}" alt="Gambar SD">
             </div>
         </div>
     </section>

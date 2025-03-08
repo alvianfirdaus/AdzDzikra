@@ -47,9 +47,9 @@
                         <div class="mb-3">
                             <label for="jenjangPend" class="form-label">Jenjang Pendidikan:</label>
                             <select class="form-control" id="jenjangPend" name="jenjangPend" required>
-                                <option value="TK" {{ $pendaftar->jenjangPend === 'TK' ? 'selected' : '' }}>TK
+                                <option value="SMP" {{ $pendaftar->jenjangPend === 'SMP' ? 'selected' : '' }}>SMP
                                 </option>
-                                <option value="Paud" {{ $pendaftar->jenjangPend === 'Paud' ? 'selected' : '' }}>Paud
+                                <option value="MA" {{ $pendaftar->jenjangPend === 'MA' ? 'selected' : '' }}>MA
                                 </option>
                             </select>
                         </div>

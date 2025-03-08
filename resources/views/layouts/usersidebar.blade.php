@@ -2,9 +2,9 @@
 <aside class="main-sidebar sidebar-dark-primary">
     <!-- Brand Logo -->
     <a href="{{ route('user.landing') }}" class="brand-link">
-        <img src="{{ asset('/') }}dist/img/Logo Shaleh.png" alt="AdminLTE Logo"
+        <img src="{{ asset('/') }}dist/img/adzdzikra.png" alt="AdminLTE Logo"
             class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light"> Anak Shaleh </span>
+        <span class="brand-text font-weight-light"> Ponpes Adz-Dzikra</span>
     </a>
 
     <!-- Sidebar -->

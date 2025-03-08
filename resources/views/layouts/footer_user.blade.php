@@ -1,21 +1,22 @@
 <footer class="footer py-4">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-4 text-lg-start">Copyright &copy;Tim IT Kel2. 2023</div>
+        <div class="col-lg-4 text-lg-start">Copyright &copy; Tim IT Ponpes Adz-Dzikra 2025 - <span id="year"></span></div>
+        <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
             <div class="col-lg-4 my-3 my-lg-0">
                 <a class="btn btn-light mx-2 ft-twitter" href="https://twitter.com/AnakSalehMalang?s=20"
                     aria-label="Twitter"></a>
                 <a class="btn btn-light mx-2 ft-facebook"
                     href="https://web.facebook.com/pages/Anak-Saleh-El-school/206693209353991" aria-label="Facebook"></a>
                 <a class="btn btn-light mx-2 ft-instagram"
-                    href="https://www.instagram.com/paudterpaduanaksalehmalang/?hl=id" aria-label="Instagram"></a>
+                    href="https://www.instagram.com/pp.adzdzikraa/" aria-label="Instagram"></a>
             </div>
             <div class="col-lg-4 text-lg-end">
                 <a class="link-light text-decoration-none me-3" href="#popup" style="color: white;">Privacy Policy</a>
                 <div id="popup">
                     <div class="window">
                         <a href="#" class="close-button" title="Close">X</a>
-                        <h6>Prifacy Policy</h6>
+                        <h6>Privacy Policy</h6>
                         <p>
                             <h7>memastikan bahwa hanya Anda yang dapat mengetahui password akun anda, dan tidak ada
                                 siapa pun di antaranya, bahkan developer pun. Hal ini karena, dengan enkripsi secara
@@ -29,7 +30,7 @@
                         <h6>Dalam penggunaan web ini, Anda setuju untuk:</h6>
                         <p>
                             <h7>memberikan informasi yang akurat, baru dan komplit tentang diri Anda saat mengisi
-                                formulir pendaftaran pada sekolah saleh.
+                                formulir pendaftaran pada yayasan Ponpes Adz-Dzikra.
                                 menjaga dan secara berkala meng-update informasi tentang diri Anda dan informasi lainnya
                                 secara akurat, baru dan komplit
                                 menerima seluru risiko dari akses ilegal atas informasi dan data regsitrasi

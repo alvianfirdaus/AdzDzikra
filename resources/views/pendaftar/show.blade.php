@@ -1,21 +1,21 @@
 @extends('layouts.userapp')
-<title>Daftar Pendaftar | Shaleh </title>
-<link rel="icon" href="{{ asset('dist/img/Logo Shaleh.png') }}">
+<title>Daftar Pendaftar | Adz-Dzikra </title>
+<link rel="icon" href="{{ asset('dist/img/adzdzikra.png') }}">
 
 <body id="top-page">
 
     <!-- Preloader -->
     <div class="preloader flex-column justify-content-center align-items-center">
-        <img class="animation__shake" src="{{ asset('/') }}dist/img/Logo Shaleh.png" alt="AdminLTELogo" height="170"
+        <img class="animation__shake" src="{{ asset('/') }}dist/img/adzdzikra.png" alt="AdminLTELogo" height="170"
             width="195">
     </div>
     <div class="wrapper">
 
         <!-- Navbar -->
         <nav class="navbar navbar-expand navbar-dark navbar-light">
-            <img src="{{ asset('dist/img/Logo Shaleh.png') }}" height="40" width="45" style="margin-right: 10px"
+            <img src="{{ asset('dist/img/adzdzikra.png') }}" height="40" width="45" style="margin-right: 10px"
                 alt="AdminLTELogo">
-            <h3 style="color: #fbfafa">Detail Pendaftar</h3>
+            <h3 style="color: #fbfafa">Ponpes Adz-Dzikra</h3>
 
             <!-- Right navbar links -->
             <div class="main-header navbar navbar-expand navbar-dark navbar-light" style="margin-left: 70%">

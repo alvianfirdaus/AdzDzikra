@@ -1,14 +1,14 @@
 @extends('layouts.userapp')
-<title>Pembayaran Siswa | Shaleh</title>
-<link rel="icon" href="{{ asset('dist/img/Logo Shaleh.png') }}">
+<title>Pembayaran Siswa | Adz Dzikra</title>
+<link rel="icon" href="{{ asset('dist/img/adzdzikra.png') }}">
 
 <body id="top-page">
     <div class="preloader flex-column justify-content-center align-items-center">
-        <img class="animation__shake" src="{{ asset('/') }}dist/img/Logo Shaleh.png" alt="AdminLTELogo" height="170" width="195">
+        <img class="animation__shake" src="{{ asset('/') }}dist/img/adzdzikra.png" alt="AdminLTELogo" height="170" width="195">
     </div>
     <div class="wrapper">
         <nav class="navbar navbar-expand navbar-dark navbar-light">
-            <img src="{{ asset('dist/img/Logo Shaleh.png') }}" height="40" width="45" style="margin-right: 10px" alt="AdminLTELogo">
+            <img src="{{ asset('dist/img/adzdzikra.png') }}" height="40" width="45" style="margin-right: 10px" alt="AdminLTELogo">
             <h4 style="color: #fbfafa">Detail Pembayaran</h4>
         </nav>
         <br>
@@ -16,7 +16,7 @@
             <div class="container-fluid">
                 <div class="inner">
                     <center>
-                        <img src="/ppdb/bank.png" alt="foto bank" style="width:60%"> <br><br>
+                        <img src="/ppdb/bank1.png" alt="foto bank" style="width:75%; height:35%;"> <br><br>
                         <h4 style="font-weight: bold">----------------------------------------------------------------------------------------------------------------------------------------------</h4>
                         <div class="container text-left">
                         <h5><strong>Profil</strong></h5>

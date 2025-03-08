@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Siswa;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -48,7 +49,7 @@ class HomeController extends Controller
             } elseif (Auth::user()->level === 'panitia') {
                 return redirect()->route('panitia.dashboard');
             } else {
-                return redirect()->route('user.landing');
+                return redirect()->route('user.dashboard');
             }
         }
 
@@ -211,7 +212,7 @@ class HomeController extends Controller
     public function UserLanding()
     {
         $user = Auth::user(); // Get the authenticated user
-        return view('user.landing', compact('user')); // Pass the user variable to the view
+        return view('user.dashboard', compact('user')); // Pass the user variable to the view
     }
 
     /**
@@ -240,8 +241,9 @@ class HomeController extends Controller
         $adminCount = User::where('level', 'admin')->count();
         $panitiaCount = User::where('level', 'panitia')->count();
         $userCount = User::where('level', 'user')->count();
+        $siswaCount = Siswa::count();
 
-        return view('panitia.dashboard', compact('adminCount', 'panitiaCount', 'userCount', 'user'));
+        return view('panitia.dashboard', compact('adminCount', 'panitiaCount', 'userCount', 'user', 'siswaCount'));
     }
 
     public function viewProfile()

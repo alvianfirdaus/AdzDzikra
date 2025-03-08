@@ -1,6 +1,6 @@
 @extends('admin.app')
-<title>Pembayaran Admin | Shaleh </title>
-<link rel="icon" href="{{ asset('dist/img/Logo Shaleh.png') }}">
+<title>Pembayaran Admin | Adz-Dzikra </title>
+<link rel="icon" href="{{ asset('dist/img/adzdzikra.png') }}">
 @extends('admin.sidebar')
 
 <body class="hold-transition sidebar-mini">

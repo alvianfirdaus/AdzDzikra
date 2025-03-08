@@ -8,9 +8,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Selamat Datang</title>
+    <title>Selamat Datang | Adz-Dzikra</title>
     <link rel="stylesheet" href="real.css">
-    <link rel="icon" type="image/icon" sizes="32x32" href="/landing/images/LogoShaleh.png">
+    <link rel="icon" type="image/icon" sizes="32x32" href="/landing/images/adzdzikra.png">
 </head>
 
 <body id="top-page">
@@ -304,7 +304,8 @@
         <footer class="footer py-4" id="kaki">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-4 text-lg-start">Copyright &copy;Tim IT Kel2. 2023</div>
+                <div class="col-lg-4 text-lg-start">Copyright &copy; Tim IT Ponpes Adz-Dzikra 2025 - <span id="year"></span></div>
+                <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
                     <div class="col-lg-4 my-3 my-lg-0">
                         <a class="btn btn-light mx-2 ft-twitter" href="https://twitter.com/AnakSalehMalang?s=20"
                             aria-label="Twitter"></a>
