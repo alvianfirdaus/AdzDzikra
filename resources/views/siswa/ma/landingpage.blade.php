@@ -58,7 +58,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#caramendaftar">Cara Mendaftar</a>
+                        <a class="nav-link" href="#caramendaftar">Vidio Profil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/login">Login</a>
