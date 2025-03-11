@@ -16,7 +16,7 @@
     <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-color">
         <div class="container">
             <img class="navbar-img" src="/landing/images/logoShaleh.png">
-            <p class="navbar-logo-text">Sekolah Saleh</p>
+            <p class="navbar-logo-text">Adz-Dzikra</p>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto">

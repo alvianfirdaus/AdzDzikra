@@ -282,9 +282,9 @@ class PendaftarController extends Controller
         // Check if the new status is "accepted" and the associated Pembayaran status is not "terbayar"
         if ($pendaftar->status === 'accepted') {
             $pembayaran = Pembayaran::where('pendaftar_id', $id)->first();
-            if (!$pembayaran || $pembayaran->status !== 'terbayar') {
+            if (!$pembayaran || $pembayaran->sts_up !== 'terbayar') {
                 // Display a message and redirect back
-                return redirect()->back()->with('error', 'Pembayaran harus divalidasi sebelum menerima pendaftar');
+                return redirect()->back()->with('error', 'Uang Pembayaran harus divalidasi sebelum menerima pendaftar');
             }
         }
 

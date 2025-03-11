@@ -69,7 +69,7 @@
                                         <div class="card">
                                             <div class="card-header border-0">
                                                 <div class="d-flex justify-content-between">
-                                                    <img src="/ppdb/1.png" style='size:px' /><br>
+                                                    <img src="/ppdb/dok.jpg" style="width: 100%; height: 100%;" /><br>
                                                 </div>
                                             </div>
                                         </div>

@@ -112,8 +112,8 @@
                                                     <tr>
                                                         <th class="text-center fonts-big">Nama</th>
                                                         <th class="text-center fonts-big">Jenjang Pendidikan</th>
-                                                        <th class="text-center fonts-big">Pembayaran</th>
-                                                        <th class="text-center fonts-big">Status</th>
+                                                        <th class="text-center fonts-big">Status Pembayaran</th>
+                                                        <th class="text-center fonts-big">Status Seleksi</th>
                                                         <th class="text-center fonts-big" colspan="2">Aksi</th>
                                                     </tr>
                                                 </thead>
@@ -124,18 +124,39 @@
                                                             </td>
                                                             <td class="text-center fonts-big">
                                                                 {{ $pendaftar->jenjangPend }}</td>
+                                                            <!-- <td class="text-center fonts-big"> -->
                                                             <td class="text-center fonts-big">
                                                                 @if ($pendaftar->pembayaran->isNotEmpty())
                                                                     @foreach ($pendaftar->pembayaran as $pembayaran)
-                                                                        @if ($pembayaran->status == 'bayar' || $pembayaran->status == 'invalid')
-                                                                            <a class="btn btn-success "
-                                                                                href="{{ route('pembayaran.dashboard') }}">Bayar</a>
+                                                                        @php
+                                                                            // Mengambil semua status dari satu item pembayaran
+                                                                            $statuses = [
+                                                                                $pembayaran->status,
+                                                                                $pembayaran->sts_perssek,
+                                                                                $pembayaran->sts_pangpon,
+                                                                                $pembayaran->sts_perpon,
+                                                                                $pembayaran->sts_up
+                                                                            ];
+
+                                                                            // Hitung jumlah masing-masing status
+                                                                            $jumlah_terbayar = count(array_filter($statuses, fn($s) => $s === 'terbayar'));
+                                                                            $jumlah_verifikasi = count(array_filter($statuses, fn($s) => $s === 'verifikasi'));
+                                                                            $jumlah_bayar = count(array_filter($statuses, fn($s) => $s === 'bayar' || $s === 'invalid'));
+                                                                        @endphp
+
+                                                                        @if ($jumlah_terbayar === count($statuses))
+                                                                            <span class="badge badge-success">Lunas</span>
+                                                                        @elseif ($jumlah_verifikasi > 0)
+                                                                            <a class="btn btn-warning">Verifikasi</a>
+                                                                        @elseif ($jumlah_bayar === count($statuses))
+                                                                            <a class="btn btn-danger" href="{{ route('pembayaran.dashboard') }}">Bayar</a>
                                                                         @else
-                                                                            {{ $pembayaran->status }}
+                                                                            {{ implode(', ', $statuses) }}
                                                                         @endif
                                                                     @endforeach
                                                                 @endif
                                                             </td>
+
                                                             <td class="text-center fonts-big">
                                                                 @if ($pendaftar->status == 'accepted')
                                                                     <a

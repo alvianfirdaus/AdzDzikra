@@ -67,212 +67,69 @@
                                         <td>Uang Pendaftaran</td>
                                         <td>{{ number_format($pembayaran->jml_up, 0, ',', '.') }}</td>
                                         <td>
-                                            <img src="{{ asset('storage/' . $pembayaran->bkt_perpon) }}" height="75px" width="100px" alt="Bukti Pembayaran">
+                                        @if ($pembayaran->bkt_up)
+                                            <img src="{{ asset('storage/' . $pembayaran->bkt_up) }}" height="75px" width="100px" alt="Bukti Pembayaran">
+                                        @else
+                                            <span>Belum Dibayar</span>
+                                        @endif
                                         </td>
-                                        <td>
-                                            <form
-                                                action="{{ route('pembayaran.updatebktup', $pembayaran->id) }}"
-                                                method="POST" class="update-form"
-                                                data-pembayaran-id="{{ $pembayaran->id }}">
-                                                @csrf
-                                                @method('PUT')
-                                                <select name="sts_up" class="form-control"
-                                                    onchange="submitForm(this)">
-                                                    <option value="bayar"
-                                                        {{ $pembayaran->sts_up === 'bayar' ? 'selected' : '' }}>
-                                                        Bayar</option>
-                                                    <option value="verifikasi"
-                                                        {{ $pembayaran->sts_up === 'verifikasi' ? 'selected' : '' }}>
-                                                        Verifikasi</option>
-                                                    <option value="invalid"
-                                                        {{ $pembayaran->sts_up === 'invalid' ? 'selected' : '' }}>
-                                                        Invalid</option>
-                                                    <option value="terbayar"
-                                                        {{ $pembayaran->sts_up === 'terbayar' ? 'selected' : '' }}>
-                                                        Terbayar</option>
-                                                </select>
-                                                    <button type="submit"
-                                                    class="btn btn-primary"
-                                                    style="display: none;">u</button>
-                                            </form>
-                                            <script>
-                                                function submitForm(selectElement) {
-                                                var form = selectElement.parentNode;
-                                                form.querySelector('button[type="submit"]')
-                                                    .click();
-                                                }
-                                            </script>
-                                        </td>
+                                        <td>{{ $pembayaran->sts_up }} </td>
                                     </tr>
                                     <tr>
                                         <td>Uang Pangkal Sekolah</td>
                                         <td>{{ number_format($pembayaran->jumlah, 0, ',', '.') }}</td>
                                         <td>
-                                            <img src="{{ asset('storage/' . $pembayaran->bukti_pembayaran) }}" height="75px" width="100px" alt="Bukti Pembayaran">
+                                        @if ($pembayaran->bukti_pembayaran)
+                                            <img src="{{ asset('storage/' . $pembayaran->bukti_pembayaran) }}" height="75px" width="100px" alt="Belum Dibayar">
+                                        @else
+                                            <span>Belum Dibayar</span>
+                                        @endif
                                         </td>
-                                        <td>
-                                            <form
-                                                action="{{ route('pembayaran.update', $pembayaran->id) }}"
-                                                method="POST" class="update-form"
-                                                data-pembayaran-id="{{ $pembayaran->id }}">
-                                                @csrf
-                                                @method('PUT')
-                                                <select name="status" class="form-control"
-                                                    onchange="submitForm(this)">
-                                                    <option value="bayar"
-                                                        {{ $pembayaran->status === 'bayar' ? 'selected' : '' }}>
-                                                        Bayar</option>
-                                                    <option value="verifikasi"
-                                                        {{ $pembayaran->status === 'verifikasi' ? 'selected' : '' }}>
-                                                        Verifikasi</option>
-                                                    <option value="invalid"
-                                                        {{ $pembayaran->status === 'invalid' ? 'selected' : '' }}>
-                                                        Invalid</option>
-                                                    <option value="terbayar"
-                                                        {{ $pembayaran->status === 'terbayar' ? 'selected' : '' }}>
-                                                        Terbayar</option>
-                                                </select>
-                                                    <button type="submit"
-                                                    class="btn btn-primary"
-                                                    style="display: none;">Update</button>
-                                            </form>
-                                            <script>
-                                                function submitForm(selectElement) {
-                                                var form = selectElement.parentNode;
-                                                form.querySelector('button[type="submit"]')
-                                                    .click();
-                                                }
-                                            </script>
+                                        <td> {{ $pembayaran->status }} 
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Uang Personal Sekolah</td>
                                         <td>{{ number_format($pembayaran->jml_perssek, 0, ',', '.') }}</td>
                                         <td>
+                                        @if ($pembayaran->bkt_perssek)
                                             <img src="{{ asset('storage/' . $pembayaran->bkt_perssek) }}" height="75px" width="100px" alt="Bukti Pembayaran">
+                                        @else
+                                            <span>Belum Dibayar</span>
+                                        @endif
                                         </td>
-                                        <td>
-                                            <form
-                                                action="{{ route('pembayaran.updatebktperssek', $pembayaran->id) }}"
-                                                method="POST" class="update-form"
-                                                data-pembayaran-id="{{ $pembayaran->id }}">
-                                                @csrf
-                                                @method('PUT')
-                                                <select name="sts_perssek" class="form-control"
-                                                    onchange="submitForm(this)">
-                                                    <option value="bayar"
-                                                        {{ $pembayaran->sts_perssek === 'bayar' ? 'selected' : '' }}>
-                                                        Bayar</option>
-                                                    <option value="verifikasi"
-                                                        {{ $pembayaran->sts_perssek === 'verifikasi' ? 'selected' : '' }}>
-                                                        Verifikasi</option>
-                                                    <option value="invalid"
-                                                        {{ $pembayaran->sts_perssek === 'invalid' ? 'selected' : '' }}>
-                                                        Invalid</option>
-                                                    <option value="terbayar"
-                                                        {{ $pembayaran->sts_perssek === 'terbayar' ? 'selected' : '' }}>
-                                                        Terbayar</option>
-                                                </select>
-                                                    <button type="submit"
-                                                    class="btn btn-primary"
-                                                    style="display: none;">Update</button>
-                                            </form>
-                                            <script>
-                                                function submitForm(selectElement) {
-                                                var form = selectElement.parentNode;
-                                                form.querySelector('button[type="submit"]')
-                                                    .click();
-                                                }
-                                            </script>
-                                        </td>
+                                        <td>{{ $pembayaran->sts_perssek }} </td>
                                     </tr>
                                     <tr>
                                         <td>Uang Pangkal Pondok</td>
                                         <td>{{ number_format($pembayaran->jml_pangpon, 0, ',', '.') }}</td>
                                         <td>
+                                        @if ($pembayaran->bkt_pangpon)
                                             <img src="{{ asset('storage/' . $pembayaran->bkt_pangpon) }}" height="75px" width="100px" alt="Bukti Pembayaran">
+                                        @else
+                                            <span>Belum Dibayar</span>
+                                        @endif
                                         </td>
-                                        <td>
-                                        <form
-                                                action="{{ route('pembayaran.updatebktpangpon', $pembayaran->id) }}"
-                                                method="POST" class="update-form"
-                                                data-pembayaran-id="{{ $pembayaran->id }}">
-                                                @csrf
-                                                @method('PUT')
-                                                <select name="sts_pangpon" class="form-control"
-                                                    onchange="submitForm(this)">
-                                                    <option value="bayar"
-                                                        {{ $pembayaran->sts_pangpon === 'bayar' ? 'selected' : '' }}>
-                                                        Bayar</option>
-                                                    <option value="verifikasi"
-                                                        {{ $pembayaran->sts_pangpon === 'verifikasi' ? 'selected' : '' }}>
-                                                        Verifikasi</option>
-                                                    <option value="invalid"
-                                                        {{ $pembayaran->sts_pangpon === 'invalid' ? 'selected' : '' }}>
-                                                        Invalid</option>
-                                                    <option value="terbayar"
-                                                        {{ $pembayaran->sts_pangpon === 'terbayar' ? 'selected' : '' }}>
-                                                        Terbayar</option>
-                                                </select>
-                                                    <button type="submit"
-                                                    class="btn btn-primary"
-                                                    style="display: none;">Update</button>
-                                            </form>
-                                            <script>
-                                                function submitForm(selectElement) {
-                                                var form = selectElement.parentNode;
-                                                form.querySelector('button[type="submit"]')
-                                                    .click();
-                                                }
-                                            </script>
                                         </td>
+                                        <td>{{ $pembayaran->sts_pangpon }} </td>
                                     </tr>
                                     <tr>
                                         <td>Uang Personal Pondok</td>
                                         <td>{{ number_format($pembayaran->jml_perpon, 0, ',', '.') }}</td>
                                         <td>
+                                        @if ($pembayaran->bkt_perpon)
                                             <img src="{{ asset('storage/' . $pembayaran->bkt_perpon) }}" height="75px" width="100px" alt="Bukti Pembayaran">
+                                        @else
+                                            <span>Belum Dibayar</span>
+                                        @endif
                                         </td>
-                                        <td>
-                                            <form
-                                                action="{{ route('pembayaran.updatebktperpon', $pembayaran->id) }}"
-                                                method="POST" class="update-form"
-                                                data-pembayaran-id="{{ $pembayaran->id }}">
-                                                @csrf
-                                                @method('PUT')
-                                                <select name="sts_perpon" class="form-control"
-                                                    onchange="submitForm(this)">
-                                                    <option value="bayar"
-                                                        {{ $pembayaran->sts_perpon === 'bayar' ? 'selected' : '' }}>
-                                                        Bayar</option>
-                                                    <option value="verifikasi"
-                                                        {{ $pembayaran->sts_perpon === 'verifikasi' ? 'selected' : '' }}>
-                                                        Verifikasi</option>
-                                                    <option value="invalid"
-                                                        {{ $pembayaran->sts_perpon === 'invalid' ? 'selected' : '' }}>
-                                                        Invalid</option>
-                                                    <option value="terbayar"
-                                                        {{ $pembayaran->sts_perpon === 'terbayar' ? 'selected' : '' }}>
-                                                        Terbayar</option>
-                                                </select>
-                                                    <button type="submit"
-                                                    class="btn btn-primary"
-                                                    style="display: none;">Update</button>
-                                            </form>
-                                            <script>
-                                                function submitForm(selectElement) {
-                                                var form = selectElement.parentNode;
-                                                form.querySelector('button[type="submit"]')
-                                                    .click();
-                                                }
-                                            </script>
-                                        </td>
+                                        <td>{{ $pembayaran->sts_perpon }} </td>
                                     </tr>
                                     
                                 </tbody>
                             </table>
                             <div class="col-lg-10">
-                                <a href="/panitia/pembayaran" class="btn btn-primary btn-icon">
+                                <a href="/user/dashboard/pembayaran" class="btn btn-primary btn-icon">
                                  <i class="fas fa-arrow-left"></i>
                                     Kembali
                                 </a>

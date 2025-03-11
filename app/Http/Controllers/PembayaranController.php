@@ -61,6 +61,12 @@ class PembayaranController extends Controller
 
         return view('pembayaran.show', compact('pembayaran'));
     }
+    public function showuser($id)
+    {
+        $pembayaran = Pembayaran::findOrFail($id);
+
+        return view('pembayaran.showuser', compact('pembayaran'));
+    }
 
     public function edit($id)
     {
@@ -109,7 +115,7 @@ class PembayaranController extends Controller
         $pembayaran->save();
 
         if ($user->level === 'user') {
-            return redirect()->route('pembayaran.show')->with('success', 'Status pembayaran berhasil dirubah.');
+            return redirect()->route('pembayaran.showuser', $pembayaran->id) ->with('success', 'Status pembayaran berhasil dirubah.');
         } elseif ($user->level === 'admin') {
             return redirect()->route('pembayaran.show')->with('success', 'Status pembayaran berhasil dirubah.');
         } elseif ($user->level === 'panitia') {
@@ -155,7 +161,7 @@ class PembayaranController extends Controller
         $pembayaran->save();
 
         if ($user->level === 'user') {
-            return redirect()->route('pembayaran.show')->with('success', 'Status pembayaran berhasil dirubah.');
+            return redirect()->route('pembayaran.showuser')->with('success', 'Status pembayaran berhasil dirubah.');
         } elseif ($user->level === 'admin') {
             return redirect()->route('pembayaran.show')->with('success', 'Status pembayaran berhasil dirubah.');
         } elseif ($user->level === 'panitia') {
@@ -201,7 +207,7 @@ class PembayaranController extends Controller
         $pembayaran->save();
 
         if ($user->level === 'user') {
-            return redirect()->route('pembayaran.show')->with('success', 'Status pembayaran berhasil dirubah.');
+            return redirect()->route('pembayaran.showuser', $pembayaran->id) ->with('success', 'Status pembayaran berhasil dirubah.');
         } elseif ($user->level === 'admin') {
             return redirect()->route('pembayaran.show')->with('success', 'Status pembayaran berhasil dirubah.');
         } elseif ($user->level === 'panitia') {
@@ -247,7 +253,7 @@ class PembayaranController extends Controller
         $pembayaran->save();
 
         if ($user->level === 'user') {
-            return redirect()->route('pembayaran.show')->with('success', 'Status pembayaran berhasil dirubah.');
+            return redirect()->route('pembayaran.showuser', $pembayaran->id) ->with('success', 'Status pembayaran berhasil dirubah.');
         } elseif ($user->level === 'admin') {
             return redirect()->route('pembayaran.show')->with('success', 'Status pembayaran berhasil dirubah.');
         } elseif ($user->level === 'panitia') {
@@ -293,7 +299,7 @@ class PembayaranController extends Controller
         $pembayaran->save();
 
         if ($user->level === 'user') {
-            return redirect()->route('pembayaran.show')->with('success', 'Status pembayaran berhasil dirubah.');
+            return redirect()->route('pembayaran.showuser', $pembayaran->id) ->with('success', 'Status pembayaran berhasil dirubah.');
         } elseif ($user->level === 'admin') {
             return redirect()->route('pembayaran.show')->with('success', 'Status pembayaran berhasil dirubah.');
         } elseif ($user->level === 'panitia') {

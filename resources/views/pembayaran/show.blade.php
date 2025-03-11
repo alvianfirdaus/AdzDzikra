@@ -67,7 +67,11 @@
                                         <td>Uang Pendaftaran</td>
                                         <td>{{ number_format($pembayaran->jml_up, 0, ',', '.') }}</td>
                                         <td>
-                                            <img src="{{ asset('storage/' . $pembayaran->bkt_perpon) }}" height="75px" width="100px" alt="Bukti Pembayaran">
+                                        @if ($pembayaran->bkt_up)
+                                            <img src="{{ asset('storage/' . $pembayaran->bkt_up) }}" height="75px" width="100px" alt="Bukti Pembayaran">
+                                        @else
+                                            <span>Belum Dibayar</span>
+                                        @endif
                                         </td>
                                         <td>
                                             <form
@@ -108,7 +112,11 @@
                                         <td>Uang Pangkal Sekolah</td>
                                         <td>{{ number_format($pembayaran->jumlah, 0, ',', '.') }}</td>
                                         <td>
+                                        @if ($pembayaran->bukti_pembayaran)
                                             <img src="{{ asset('storage/' . $pembayaran->bukti_pembayaran) }}" height="75px" width="100px" alt="Bukti Pembayaran">
+                                        @else
+                                            <span>Belum Dibayar</span>
+                                        @endif
                                         </td>
                                         <td>
                                             <form
@@ -149,7 +157,11 @@
                                         <td>Uang Personal Sekolah</td>
                                         <td>{{ number_format($pembayaran->jml_perssek, 0, ',', '.') }}</td>
                                         <td>
+                                        @if ($pembayaran->bkt_perssek)
                                             <img src="{{ asset('storage/' . $pembayaran->bkt_perssek) }}" height="75px" width="100px" alt="Bukti Pembayaran">
+                                        @else
+                                            <span>Belum Dibayar</span>
+                                        @endif
                                         </td>
                                         <td>
                                             <form
@@ -190,7 +202,11 @@
                                         <td>Uang Pangkal Pondok</td>
                                         <td>{{ number_format($pembayaran->jml_pangpon, 0, ',', '.') }}</td>
                                         <td>
+                                        @if ($pembayaran->bkt_pangpon)
                                             <img src="{{ asset('storage/' . $pembayaran->bkt_pangpon) }}" height="75px" width="100px" alt="Bukti Pembayaran">
+                                        @else
+                                            <span>Belum Dibayar</span>
+                                        @endif
                                         </td>
                                         <td>
                                         <form
@@ -231,7 +247,11 @@
                                         <td>Uang Personal Pondok</td>
                                         <td>{{ number_format($pembayaran->jml_perpon, 0, ',', '.') }}</td>
                                         <td>
+                                        @if ($pembayaran->bkt_perpon)
                                             <img src="{{ asset('storage/' . $pembayaran->bkt_perpon) }}" height="75px" width="100px" alt="Bukti Pembayaran">
+                                        @else
+                                            <span>Belum Dibayar</span>
+                                        @endif
                                         </td>
                                         <td>
                                             <form

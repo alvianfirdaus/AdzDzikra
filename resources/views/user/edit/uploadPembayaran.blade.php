@@ -4,7 +4,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Upload Pembayaran</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">Uang Pangkal Sekolah</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -18,11 +18,7 @@
                             value="{{ old('pendaftar_id', $pembayaran->pendaftar_id) }}" required autofocus>
 
                         <div class="form-group">
-                            @if ($pembayaran->pendaftar->jenjangPend == 'MA')
-                                <img src="/ppdb/uangpangkalsekolah.png" alt="" width="465px" height="550px">
-                            @else($pembayaran->pendaftar->jenjangPend == 'SMP')
-                                <img src="/ppdb/uangpangkalsekolah.png" alt="" width="465px" height="550px">
-                            @endif
+                                <img src="/ppdb/2.png" alt="" width="465px" height="550px">
                         </div>
 
                         <div class="form-group">

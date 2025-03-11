@@ -46,7 +46,6 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/pendaftar/{id}', [PendaftarController::class, 'update'])->name('pendaftar.update');
     Route::get('/pembayaran/{id}/edit', [PembayaranController::class, 'edit'])->name('pembayaran.edit');
     Route::put('/pembayaran/{id}', [PembayaranController::class, 'update'])->name('pembayaran.update');
-    Route::get('/pembayaran/{id}', [PembayaranController::class, 'show'])->name('pembayaran.show');
     Route::get('/pembayaran/{id}/print', [PembayaranController::class, 'print'])->name('pembayaran.print');
     Route::get('/siswa/{id}', [SiswaController::class, 'show'])->name('siswa.show');
     Route::get('/siswa/{id}/edit', [SiswaController::class, 'edit'])->name('siswa.edit');
@@ -73,6 +72,10 @@ Route::middleware(['checkLevel:user'])->group(function () {
     Route::post('/user/dashboard/pendaftar', [PendaftarController::class, 'store'])->name('pendaftar.store');
     Route::get('/user/dashboard/pembayaran', [PembayaranController::class, 'dashboard'])->name('pembayaran.dashboard');
     Route::get('/user/dashboard/siswa', [SiswaController::class, 'dashboard'])->name('siswa.dashboard');
+    Route::get('user/pembayaran/{id}', [PembayaranController::class, 'showuser'])->name('pembayaran.showuser');
+    
+    
+
 });
 
 // Panitia routes
@@ -87,6 +90,7 @@ Route::middleware(['checkLevel:panitia'])->group(function () {
     Route::get('/panitia/edit/profile', [HomeController::class, 'editProfile'])->name('panitia.edit.editProfile');
     Route::post('/panitia/update-user', [HomeController::class, 'updateUser'])->name('panitia.update-user');
     Route::put('panitia/pendaftar/{id}/update-status', [PendaftarController::class, 'updateStatus'])->name('panitia.pendaftar.updateStatus');
+    Route::get('panitia/pembayaran/{id}', [PembayaranController::class, 'show'])->name('pembayaran.show');
 });
 
 // Admin routes

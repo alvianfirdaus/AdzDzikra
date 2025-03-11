@@ -9,7 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Selamat Datang | Adz-Dzikra</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="real.css">
+    <link rel="stylesheet" href="landing/css/sosmed.css">
     <link rel="icon" type="image/icon" sizes="32x32" href="/landing/images/adzdzikra.png">
 </head>
 
@@ -38,6 +40,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#one">Pengumuman</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Gallery</a>
+                    </li>
 
                     <!-- Dropdown Pendidikan -->
                     <li class="nav-item dropdown">
@@ -59,7 +64,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#tutors">Tim IT</a>
+                        <a class="nav-link" href="#tutors">Video Profil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/login">Login</a>
@@ -183,7 +188,7 @@
     </section>
 
     {{-- gallery --}}
-    <section>
+    <section id = gallery>
         <div class="container" style="padding: 3rem;">
             <h1 class="section-heading text-center text-uppercase" style="margin-bottom: 2rem">Gallery</h1>
             <div class="row">
@@ -231,36 +236,30 @@
     <section id="tutors">
         <div class="tengah">
             <div class="kolom">
-                <p class="deskripsi">Staf IT</p>
-                <h2>Anak Saleh</h2>
-                <p>Periode 2023-2024</p>
+                <p class="deskripsi">Social Media</p>
+                <h2>Pondok Pesantren Adz Dzikra</h2>
             </div>
         </div>
 
         <div class="container">
-            <div class="tutor-list">
-                <div class="kartu-tutor">
-                    <img src="/landing/images/about/1.png" />
-                    <p style="text-align: center; margin-left: -15%">M Ega Rama Fernanda</p>
-                </div>
-                <div class="kartu-tutor">
-                    <img src="/landing/images/about/2.png" />
-                    <p style="text-align: center; margin-left: -15%">Abdullah Azzam</p>
-                    </h7>
-                </div>
-                <div class="kartu-tutor">
-                    <img src="/landing/images/about/3.png" />
-                    <p style="text-align: center; margin-left: -15%">Alvian Nur Firdaus</p>
-                </div>
-                <div class="kartu-tutor">
-                    <img src="/landing/images/about/4.png" />
-                    <p style="text-align: center; margin-left: -15%">Elang Putra Adam</p>
-                </div>
-                <div class="kartu-tutor">
-                    <img src="/landing/images/about/5.png" />
-                    <p style="text-align: center; margin-left: -15%">Rr Denti Nurramadhona</p>
-                </div>
+            <div class="containersosmed">
+            <a class="social-icon" href="https://www.youtube.com/@sanadzhebat" aria-label="YouTube">
+                <i class="fa-brands fa-youtube youtube"></i>
+            </a>
+            <a class="social-icon" href="https://www.tiktok.com/@sanadz_official" aria-label="TikTok">
+                <i class="fa-brands fa-tiktok tiktok"></i>
+            </a>
+            <a class="social-icon" href="https://www.instagram.com/pp.adzdzikraa?igsh=MWVxc3kyNDh1N3pxYw==" aria-label="Instagram">
+                <i class="fa-brands fa-instagram instagram"></i>
+            </a>
             </div>
+
+            <script>
+                function toggleName(id) {
+                    let nameElement = document.getElementById(id);
+                    nameElement.style.display = nameElement.style.display === "none" ? "block" : "none";
+                }
+            </script>
         </div>
         <br>
         <br>
@@ -268,12 +267,12 @@
         <section id="tutors">
             <div class="tengah">
                 <div class="kolom">
-                    <p class="deskripsi">Tutorial Pendaftaran</p>
-                    <h2>Anak Saleh</h2>
+                    <p class="deskripsi">Video Profil</p>
+                    <h2>Pondok Pesantren Adz-Dzikra Bnayuwangi</h2>
                 </div>
                 <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="534" height="300"
                     type="text/html"
-                    src="https://www.youtube.com/embed/7Hr7sxQ6vUg?autoplay=0&fs=0&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0&origin=https://youtubeembedcode.com">
+                    src="https://www.youtube.com/embed/wTChLxxB22M" title="" frameBorder="0"   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowFullScreen><br>Powered by <a href="https://youtubeembedcode.com">
                     <div><small><a href="https://youtubeembedcode.com/en">
                                 <div><small><a href="https://youtubeembedcode.com/pl/">youtubeembedcode pl</a></small>
                                 </div>
@@ -306,16 +305,18 @@
                 <div class="row align-items-center">
                 <div class="col-lg-4 text-lg-start">Copyright &copy; Tim IT Ponpes Adz-Dzikra 2025 - <span id="year"></span></div>
                 <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-                    <div class="col-lg-4 my-3 my-lg-0">
-                        <a class="btn btn-light mx-2 ft-twitter" href="https://twitter.com/AnakSalehMalang?s=20"
-                            aria-label="Twitter"></a>
-                        <a class="btn btn-light mx-2 ft-facebook"
-                            href="https://web.facebook.com/pages/Anak-Saleh-El-school/206693209353991"
-                            aria-label="Facebook"></a>
-                        <a class="btn btn-light mx-2 ft-instagram"
-                            href="https://www.instagram.com/paudterpaduanaksalehmalang/?hl=id"
-                            aria-label="Instagram"></a>
-                    </div>
+                <div class="col-lg-4 my-3 my-lg-0">
+                    <a class="btn btn-light mx-2" href="https://www.youtube.com/@sanadzhebat" aria-label="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                    <a class="btn btn-light mx-2" href="https://www.tiktok.com/@sanadz_official" aria-label="TikTok">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                    <a class="btn btn-light mx-2" href="https://www.instagram.com/pp.adzdzikraa?igsh=MWVxc3kyNDh1N3pxYw==" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+
 
                     <div class="col-lg-4 text-lg-end">
                         <a class="link-light text-decoration-none me-3" href="#popup">Privacy Policy</a>
@@ -351,7 +352,7 @@
                         </div>
                     </div>
                 </div>
-                Yayasan Pendidikan Anak Saleh
+                Yayasan Pondok Pesantren Adz-Dzikra
             </div>
         </footer>
 

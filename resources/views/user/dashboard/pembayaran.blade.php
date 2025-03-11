@@ -90,6 +90,28 @@
                                                             </tr>
                                                         </thead>
                                                         <tbody>
+                                                            <tr>
+                                                                    <td>Uang pendaftaran</td>
+                                                                    <td>{{ $pembayaran->jml_up }}</td>
+                                                                    <td>{{ $pembayaran->sts_up }}</td>
+                                                                    <td>
+                                                                    @if ($pembayaran->sts_up == 'bayar')
+                                                                        <a class="btn btn-primary" href="#"
+                                                                            data-toggle="modal"
+                                                                            data-target="#uploadUp{{ $pembayaran->id }}">Unggah</a>
+                                                                    @elseif ($pembayaran->sts_up == 'invalid')
+                                                                        <a class="btn btn-warning" href="#"
+                                                                            data-toggle="modal"
+                                                                            data-target="#uploadUp{{ $pembayaran->id }}">Ubah</a>
+                                                                    @elseif ($pembayaran->sts_up == 'verifikasi')
+                                                                        <a href="{{ route('pembayaran.showuser', $pembayaran->id) }}"
+                                                                            class="btn btn-primary">Lihat</a>
+                                                                    @elseif ($pembayaran->sts_up == 'terbayar')
+                                                                        <a href="{{ route('pembayaran.showuser', $pembayaran->id) }}"
+                                                                            class="btn btn-primary">Lihat</a>
+                                                                    @endif
+                                                                    </td>
+                                                                </tr>
                                                                 <tr>
                                                                     <td>Uang Pangkal Sekolah</td>
                                                                     <td>{{ $pembayaran->jumlah }}</td>
@@ -104,10 +126,10 @@
                                                                             data-toggle="modal"
                                                                             data-target="#uploadPembayaran{{ $pembayaran->id }}">Ubah</a>
                                                                     @elseif ($pembayaran->status == 'verifikasi')
-                                                                        <a href="{{ route('pembayaran.show', $pembayaran->id) }}"
+                                                                        <a href="{{ route('pembayaran.showuser', $pembayaran->id) }}"
                                                                             class="btn btn-primary">Lihat</a>
                                                                     @elseif ($pembayaran->status == 'terbayar')
-                                                                        <a href="{{ route('pembayaran.show', $pembayaran->id) }}"
+                                                                        <a href="{{ route('pembayaran.showuser', $pembayaran->id) }}"
                                                                             class="btn btn-primary">Lihat</a>
                                                                     @endif
                                                                     </td>
@@ -126,10 +148,10 @@
                                                                             data-toggle="modal"
                                                                             data-target="#uploadPerssek{{ $pembayaran->id }}">Ubah</a>
                                                                     @elseif ($pembayaran->sts_perssek == 'verifikasi')
-                                                                        <a href="{{ route('pembayaran.show', $pembayaran->id) }}"
+                                                                        <a href="{{ route('pembayaran.showuser', $pembayaran->id) }}"
                                                                             class="btn btn-primary">Lihat</a>
                                                                     @elseif ($pembayaran->sts_perssek == 'terbayar')
-                                                                        <a href="{{ route('pembayaran.show', $pembayaran->id) }}"
+                                                                        <a href="{{ route('pembayaran.showuser', $pembayaran->id) }}"
                                                                             class="btn btn-primary">Lihat</a>
                                                                     @endif
                                                                         
@@ -143,16 +165,16 @@
                                                                     @if ($pembayaran->sts_pangpon == 'bayar')
                                                                         <a class="btn btn-primary" href="#"
                                                                             data-toggle="modal"
-                                                                            data-target="#uploadPembayaran{{ $pembayaran->id }}">Unggah</a>
-                                                                    @elseif ($pembayaran->ts_pangpon == 'invalid')
+                                                                            data-target="#uploadPangpon{{ $pembayaran->id }}">Unggah</a>
+                                                                    @elseif ($pembayaran->sts_pangpon == 'invalid')
                                                                         <a class="btn btn-warning" href="#"
                                                                             data-toggle="modal"
-                                                                            data-target="#uploadPembayaran{{ $pembayaran->id }}">Ubah</a>
-                                                                    @elseif ($pembayaran->ts_pangpon == 'verifikasi')
-                                                                        <a href="{{ route('pembayaran.show', $pembayaran->id) }}"
+                                                                            data-target="#uploadPangpon{{ $pembayaran->id }}">Ubah</a>
+                                                                    @elseif ($pembayaran->sts_pangpon == 'verifikasi')
+                                                                        <a href="{{ route('pembayaran.showuser', $pembayaran->id) }}"
                                                                             class="btn btn-primary">Lihat</a>
                                                                     @elseif ($pembayaran->sts_pangpon == 'terbayar')
-                                                                        <a href="{{ route('pembayaran.show', $pembayaran->id) }}"
+                                                                        <a href="{{ route('pembayaran.showuser', $pembayaran->id) }}"
                                                                             class="btn btn-primary">Lihat</a>
                                                                     @endif
                                                                         
@@ -166,16 +188,16 @@
                                                                     @if ($pembayaran->sts_perpon == 'bayar')
                                                                         <a class="btn btn-primary" href="#"
                                                                             data-toggle="modal"
-                                                                            data-target="#uploadPembayaran{{ $pembayaran->id }}">Unggah</a>
+                                                                            data-target="#uploadPerpon{{ $pembayaran->id }}">Unggah</a>
                                                                     @elseif ($pembayaran->sts_perpon == 'invalid')
                                                                         <a class="btn btn-warning" href="#"
                                                                             data-toggle="modal"
-                                                                            data-target="#uploadPembayaran{{ $pembayaran->id }}">Ubah</a>
+                                                                            data-target="#uploadPerpon{{ $pembayaran->id }}">Ubah</a>
                                                                     @elseif ($pembayaran->sts_perpon == 'verifikasi')
-                                                                        <a href="{{ route('pembayaran.show', $pembayaran->id) }}"
+                                                                        <a href="{{ route('pembayaran.showuser', $pembayaran->id) }}"
                                                                             class="btn btn-primary">Lihat</a>
                                                                     @elseif ($pembayaran->sts_perpon == 'terbayar')
-                                                                        <a href="{{ route('pembayaran.show', $pembayaran->id) }}"
+                                                                        <a href="{{ route('pembayaran.showuser', $pembayaran->id) }}"
                                                                             class="btn btn-primary">Lihat</a>
                                                                     @endif
                                                                         
@@ -187,8 +209,11 @@
                                                 </td>
                                             </tr>
                                         @endforeach
+                                        @include('user.edit.uploadUp')
                                         @include('user.edit.uploadPembayaran')
                                         @include('user.edit.uploadPerssek')
+                                        @include('user.edit.uploadPangpon')
+                                        @include('user.edit.uploadPerpon')
                                     </tbody>
                                 </table>
 
