@@ -109,11 +109,13 @@ class PendaftarController extends Controller
 
         // Set jumlah berdasarkan jenjangPend
         if ($pendaftar->jenjangPend == 'SMP') {
+            $jml_up = 500000;
             $jumlah = 1000000;
             $jml_perssek = 1000000;
             $jml_pangpon = 1000000;
             $jml_perpon = 1000000;
         } elseif ($pendaftar->jenjangPend == 'MA') {
+            $jml_up = 500000;
             $jumlah = 1000000;
             $jml_perssek = 1000000;
             $jml_pangpon = 1000000;
@@ -124,6 +126,7 @@ class PendaftarController extends Controller
         $pembayaran->pendaftar_id = $pendaftar->id;
         $pembayaran->jumlah = $jumlah;
         $pembayaran->status = 'bayar'; // Set status sebagai "bayar" secara default
+        $pembayaran->jml_up = $jml_up;
         $pembayaran->jml_perssek = $jml_perssek;
         $pembayaran->jml_pangpon = $jml_pangpon;
         $pembayaran->jml_perpon = $jml_perpon;

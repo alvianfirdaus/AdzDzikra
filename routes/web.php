@@ -56,6 +56,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/table', [AdminController::class, 'index'])->name('table');
     Route::put('/pembayaran/update/{id}', [PembayaranController::class, 'update'])->name('pembayaran.update');
     Route::put('/pembayaran/updatebktperssek/{id}', [PembayaranController::class, 'updatebktperssek'])->name('pembayaran.updatebktperssek');
+    Route::put('/pembayaran/updatebktpangpon/{id}', [PembayaranController::class, 'updatebktpangpon'])->name('pembayaran.updatebktpangpon');
+    Route::put('/pembayaran/updatebktperpon/{id}', [PembayaranController::class, 'updatebktperpon'])->name('pembayaran.updatebktperpon');
+    Route::put('/pembayaran/updatebktup/{id}', [PembayaranController::class, 'updatebktup'])->name('pembayaran.updatebktup');
 
 });
 

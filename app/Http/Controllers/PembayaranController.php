@@ -109,11 +109,11 @@ class PembayaranController extends Controller
         $pembayaran->save();
 
         if ($user->level === 'user') {
-            return redirect()->route('pembayaran.dashboard')->with('success', 'Status pembayaran berhasil dirubah.');
+            return redirect()->route('pembayaran.show')->with('success', 'Status pembayaran berhasil dirubah.');
         } elseif ($user->level === 'admin') {
-            return redirect()->route('admin.pembayaran')->with('success', 'Status pembayaran berhasil dirubah.');
+            return redirect()->route('pembayaran.show')->with('success', 'Status pembayaran berhasil dirubah.');
         } elseif ($user->level === 'panitia') {
-            return redirect()->route('panitia.pembayaran')->with('success', 'Status pembayaran berhasil dirubah.');
+            return redirect()->route('pembayaran.show', ['id' => $id])->with('success', 'Status pembayaran berhasil dirubah.');
         }
 // dibuat seperti itu bang messi
 
@@ -155,15 +155,154 @@ class PembayaranController extends Controller
         $pembayaran->save();
 
         if ($user->level === 'user') {
-            return redirect()->route('pembayaran.dashboard')->with('success', 'Status pembayaran berhasil dirubah.');
+            return redirect()->route('pembayaran.show')->with('success', 'Status pembayaran berhasil dirubah.');
         } elseif ($user->level === 'admin') {
-            return redirect()->route('admin.pembayaran')->with('success', 'Status pembayaran berhasil dirubah.');
+            return redirect()->route('pembayaran.show')->with('success', 'Status pembayaran berhasil dirubah.');
         } elseif ($user->level === 'panitia') {
-            return redirect()->route('panitia.pembayaran')->with('success', 'Status pembayaran berhasil dirubah.');
+            return redirect()->route('pembayaran.show', ['id' => $id])->with('success', 'Status pembayaran berhasil dirubah.');
         }
 // dibuat seperti itu bang messi
 
     }
+    public function updatebktpangpon(Request $request, $id)
+    {
+        $user = Auth::user();
+        $pembayaran = Pembayaran::findOrFail($id);
+
+        if ($user->level == 'user') {
+            if ($pembayaran->sts_pangpon !== 'invalid' && $pembayaran->sts_pangpon !== 'bayar') {
+                return redirect()->back()->with('error', 'Hanya pembayaran dengan status "invalid" yang dapat diunggah ulang berkas.');
+            }
+
+            $validator = Validator::make($request->all(), [
+                'bkt_pangpon' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            ]);
+
+            if ($validator->fails()) {
+                return redirect()->back()->withErrors($validator)->withInput();
+            }
+
+            $image_name = $request->file('bkt_pangpon')->store('images', 'public');
+
+            $pembayaran->bkt_pangpon = $image_name;
+            $pembayaran->sts_pangpon = 'verifikasi'; // Set the status to 'verifikasi' if it was previously 'bayar' or 'invalid'
+        } else if ($user->level == 'admin' || $user->level == 'panitia') {
+            $validator = Validator::make($request->all(), [
+                'sts_pangpon' => 'required',
+            ]);
+
+            if ($validator->fails()) {
+                return redirect()->back()->withErrors($validator)->withInput();
+            }
+
+            $pembayaran->sts_pangpon = $request->sts_pangpon;
+        }
+
+        $pembayaran->save();
+
+        if ($user->level === 'user') {
+            return redirect()->route('pembayaran.show')->with('success', 'Status pembayaran berhasil dirubah.');
+        } elseif ($user->level === 'admin') {
+            return redirect()->route('pembayaran.show')->with('success', 'Status pembayaran berhasil dirubah.');
+        } elseif ($user->level === 'panitia') {
+            return redirect()->route('pembayaran.show', ['id' => $id])->with('success', 'Status pembayaran berhasil dirubah.');
+        }
+// dibuat seperti itu bang messi
+
+    }
+    public function updatebktperpon(Request $request, $id)
+    {
+        $user = Auth::user();
+        $pembayaran = Pembayaran::findOrFail($id);
+
+        if ($user->level == 'user') {
+            if ($pembayaran->sts_perpon !== 'invalid' && $pembayaran->sts_perpon !== 'bayar') {
+                return redirect()->back()->with('error', 'Hanya pembayaran dengan status "invalid" yang dapat diunggah ulang berkas.');
+            }
+
+            $validator = Validator::make($request->all(), [
+                'bkt_perpon' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            ]);
+
+            if ($validator->fails()) {
+                return redirect()->back()->withErrors($validator)->withInput();
+            }
+
+            $image_name = $request->file('bkt_perpon')->store('images', 'public');
+
+            $pembayaran->bkt_perpon = $image_name;
+            $pembayaran->sts_perpon = 'verifikasi'; // Set the status to 'verifikasi' if it was previously 'bayar' or 'invalid'
+        } else if ($user->level == 'admin' || $user->level == 'panitia') {
+            $validator = Validator::make($request->all(), [
+                'sts_perpon' => 'required',
+            ]);
+
+            if ($validator->fails()) {
+                return redirect()->back()->withErrors($validator)->withInput();
+            }
+
+            $pembayaran->sts_perpon = $request->sts_perpon;
+        }
+
+        $pembayaran->save();
+
+        if ($user->level === 'user') {
+            return redirect()->route('pembayaran.show')->with('success', 'Status pembayaran berhasil dirubah.');
+        } elseif ($user->level === 'admin') {
+            return redirect()->route('pembayaran.show')->with('success', 'Status pembayaran berhasil dirubah.');
+        } elseif ($user->level === 'panitia') {
+            return redirect()->route('pembayaran.show', ['id' => $id])->with('success', 'Status pembayaran berhasil dirubah.');
+        }
+// dibuat seperti itu bang messi
+
+    }
+    public function updatebktup(Request $request, $id)
+    {
+        $user = Auth::user();
+        $pembayaran = Pembayaran::findOrFail($id);
+
+        if ($user->level == 'user') {
+            if ($pembayaran->sts_up !== 'invalid' && $pembayaran->sts_up !== 'bayar') {
+                return redirect()->back()->with('error', 'Hanya pembayaran dengan status "invalid" yang dapat diunggah ulang berkas.');
+            }
+
+            $validator = Validator::make($request->all(), [
+                'bkt_up' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            ]);
+
+            if ($validator->fails()) {
+                return redirect()->back()->withErrors($validator)->withInput();
+            }
+
+            $image_name = $request->file('bkt_up')->store('images', 'public');
+
+            $pembayaran->bkt_up = $image_name;
+            $pembayaran->sts_up = 'verifikasi'; // Set the status to 'verifikasi' if it was previously 'bayar' or 'invalid'
+        } else if ($user->level == 'admin' || $user->level == 'panitia') {
+            $validator = Validator::make($request->all(), [
+                'sts_up' => 'required',
+            ]);
+
+            if ($validator->fails()) {
+                return redirect()->back()->withErrors($validator)->withInput();
+            }
+
+            $pembayaran->sts_up = $request->sts_up;
+        }
+
+        $pembayaran->save();
+
+        if ($user->level === 'user') {
+            return redirect()->route('pembayaran.show')->with('success', 'Status pembayaran berhasil dirubah.');
+        } elseif ($user->level === 'admin') {
+            return redirect()->route('pembayaran.show')->with('success', 'Status pembayaran berhasil dirubah.');
+        } elseif ($user->level === 'panitia') {
+            return redirect()->route('pembayaran.show', ['id' => $id])->with('success', 'Status pembayaran berhasil dirubah.');
+        }
+// dibuat seperti itu bang messi
+
+    }
+    
 
     public function print($id)
     {
