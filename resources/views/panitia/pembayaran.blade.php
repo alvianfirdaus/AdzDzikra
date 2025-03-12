@@ -54,7 +54,14 @@
                                             <div class="card-body">
                                                 <div class="box-header with-border">
                                                     <h6 class="box-title">Detail Pembayaran</h6>
-                                                    <form action="{{ route('searchPPembayaran') }}" method="GET" class="box-tools">
+                                                    <!-- Tombol Filter -->
+                                                    <div class="btn-group" role="group">
+                                                        <button type="button" class="btn btn-primary" onclick="filterData('MA')">MA</button>
+                                                        <button type="button" class="btn btn-primary" onclick="filterData('SMP')">SMP</button>
+                                                        <button type="button" class="btn btn-secondary" onclick="resetFilter()">Semua</button>
+                                                    </div>
+                                                    <div class="mb-3"></div>
+                                                    <form action="{{ route('searchPembayaran') }}" method="GET" class="box-tools">
                                                         <div class="input-group">
                                                             <input type="text" name="search" class="form-control" placeholder="Search">
                                                             <div class="input-group-btn">
@@ -63,6 +70,7 @@
                                                         </div>
                                                     </form>
                                                 </div>
+                                                <div class="mb-3"></div>
                                                 
                                                 <div class="box-body">
                                                     <table class="table table-bordered">
@@ -77,7 +85,7 @@
                                                         </thead>
                                                         <tbody>
                                                             @foreach ($pembayarans as $pembayaran)
-                                                                <tr>
+                                                                <tr class="pembayaran-row" data-jenjang="{{ $pembayaran->pendaftar->jenjangPend }}">
                                                                     <td>{{ $pembayaran->pendaftar->name }}</td>
                                                                     <td>{{ $pembayaran->pendaftar->name_wali }}</td>
                                                                     <td>{{ $pembayaran->pendaftar->jenjangPend }}</td>
@@ -138,6 +146,25 @@
     </div>
 
     @extends('admin.footer')
+
+    <script>
+    function filterData(jenjangPend) {
+        document.querySelectorAll('.pembayaran-row').forEach(row => {
+            if (row.getAttribute('data-jenjang') === jenjangPend) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+
+    function resetFilter() {
+        document.querySelectorAll('.pembayaran-row').forEach(row => {
+            row.style.display = '';
+        });
+    }
+</script>
+
 
     <script src="{{ asset('/') }}plugins/jquery/jquery.min.js"></script>
     <script src="{{ asset('/') }}plugins/bootstrap/js/bootstrap.bundle.min.js"></script>

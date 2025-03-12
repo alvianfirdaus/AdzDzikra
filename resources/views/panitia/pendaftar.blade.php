@@ -58,6 +58,13 @@
                 <h1>Tabel Daftar Calon Siswa </h1>
                 <h6>Mohon untuk selektif dan teliti dalam menyeleksi calon siswa ! </h6>
                 <hr>
+                <!-- Tombol Filter -->
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-primary" onclick="filterData('MA')">MA</button>
+                        <button type="button" class="btn btn-primary" onclick="filterData('SMP')">SMP</button>
+                        <button type="button" class="btn btn-secondary" onclick="resetFilter()">Semua</button>
+                    </div>
+                <div class="mb-3"></div>
                 @include('user.edit.editPendaftar')
                 @include('admin.delete.deletePendaftar')
                 @if (session('error'))
@@ -91,7 +98,7 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>No.</th>
+                                <th>Nik</th>
                                 <th>Nama</th>
                                 <th>Nama Wali</th>
                                 <th>Jenjang Pendidikan</th>
@@ -103,17 +110,41 @@
                         </thead>
                         <tbody>
                             @foreach ($pendaftars as $pendaftar)
-                                <tr>
-                                    <td>{{ $loop->iteration }}</td>
+                                <tr class="seleksi-row" data-jenjang="{{ $pendaftar->jenjangPend }}">
+                                    <td>{{ $pendaftar->nik }}</td>
                                     <td>{{ $pendaftar->name }}</td>
                                     <td>{{ $pendaftar->name_wali }}</td>
                                     <td>{{ $pendaftar->jenjangPend }}</td>
                                     <td>
-                                        @if ($pendaftar->pembayaran->isNotEmpty())
-                                            @foreach ($pendaftar->pembayaran as $pembayaran)
-                                                {{ $pembayaran->status }}
-                                            @endforeach
-                                        @endif
+                                    @if ($pendaftar->pembayaran->isNotEmpty())
+                                        @foreach ($pendaftar->pembayaran as $pembayaran)
+                                            @php
+                                                // Mengambil semua status dari satu item pembayaran
+                                                $statuses = [
+                                                    $pembayaran->status,
+                                                    $pembayaran->sts_perssek,
+                                                    $pembayaran->sts_pangpon,
+                                                    $pembayaran->sts_perpon,
+                                                    $pembayaran->sts_up
+                                                ];
+
+                                                // Hitung jumlah masing-masing status
+                                                $jumlah_terbayar = count(array_filter($statuses, fn($s) => $s === 'terbayar'));
+                                                $jumlah_verifikasi = count(array_filter($statuses, fn($s) => $s === 'verifikasi'));
+                                                $jumlah_bayar = count(array_filter($statuses, fn($s) => $s === 'bayar' || $s === 'invalid'));
+                                            @endphp
+
+                                            @if ($jumlah_terbayar === count($statuses))
+                                                <span class="badge badge-success">Lunas</span>
+                                            @elseif ($jumlah_verifikasi > 0)
+                                                <a class="badge badge-warning">Mengangsur</a>
+                                            @elseif ($jumlah_bayar === count($statuses))
+                                                <a class="badge badge-danger">Belum Lunas</a>
+                                            @else
+                                                {{ implode(', ', $statuses) }}
+                                            @endif
+                                        @endforeach
+                                    @endif
                                     </td>
 
                                     <td>{{ $pendaftar->status }}</td>
@@ -179,6 +210,24 @@
     @extends('admin.footer')
 
     <!-- REQUIRED SCRIPTS -->
+
+    <script>
+    function filterData(jenjangPend) {
+        document.querySelectorAll('.seleksi-row').forEach(row => {
+            if (row.getAttribute('data-jenjang') === jenjangPend) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+
+    function resetFilter() {
+        document.querySelectorAll('.seleksi-row').forEach(row => {
+            row.style.display = '';
+        });
+    }
+</script>
 
     <!-- jQuery -->
     <script src="{{ asset('/') }}plugins/jquery/jquery.min.js"></script>

@@ -70,6 +70,13 @@
                                             <div class="card-body">
                                                 <div class="box-header with-border">
                                                     <h6 class="box-title">Detail Pembayaran</h6>
+                                                    <!-- Tombol Filter -->
+                                                    <div class="btn-group" role="group">
+                                                        <button type="button" class="btn btn-primary" onclick="filterData('MA')">MA</button>
+                                                        <button type="button" class="btn btn-primary" onclick="filterData('SMP')">SMP</button>
+                                                        <button type="button" class="btn btn-secondary" onclick="resetFilter()">Semua</button>
+                                                    </div>
+                                                    <div class="mb-3"></div>
                                                     <form action="{{ route('searchPembayaran') }}" method="GET"
                                                         class="box-tools">
                                                         <div class="input-group">
@@ -83,11 +90,7 @@
                                                         </div>
                                                     </form>
                                                 </div>
-                                                @if ($message = Session::get('success'))
-                                                    <div class="alert alert-success">
-                                                        <p>{{ $message }}</p>
-                                                    </div>
-                                                @endif
+                                                
                                                 <!-- /.box-header -->
                                                 <div class="box-body">
                                                     <table class="table table-bordered">
@@ -96,62 +99,44 @@
                                                                 <th>Name</th>
                                                                 <th>Name Wali</th>
                                                                 <th>Jenjang Pendidikan</th>
-                                                                <th>Jumlah</th>
-                                                                <th>Status</th>
-                                                                <th>Actions</th>
+                                                                <th>Status Pembayaran</th>
+                                                                <th>Action</th>
                                                             </tr>
                                                         </thead>
                                                         <br>
                                                         <tbody>
-                                                            @foreach ($pembayarans as $pembayaran)
-                                                                <tr>
+                                                        @foreach ($pembayarans as $pembayaran)
+                                                                <tr  class="pembayaran-row" data-jenjang="{{ $pembayaran->pendaftar->jenjangPend }}">
                                                                     <td>{{ $pembayaran->pendaftar->name }}</td>
                                                                     <td>{{ $pembayaran->pendaftar->name_wali }}</td>
                                                                     <td>{{ $pembayaran->pendaftar->jenjangPend }}</td>
                                                                     <td>
-                                                                        {{ $pembayaran->jumlah }}
-                                                                    </td>
-                                                                    <td>
-                                                                        <form
-                                                                            action="{{ route('pembayaran.update', $pembayaran->id) }}"
-                                                                            method="POST" class="update-form"
-                                                                            data-pembayaran-id="{{ $pembayaran->id }}">
-                                                                            @csrf
-                                                                            @method('PUT')
-                                                                            <select name="status" class="form-control"
-                                                                                onchange="submitForm(this)">
-                                                                                <option value="bayar"
-                                                                                    {{ $pembayaran->status === 'bayar' ? 'selected' : '' }}>
-                                                                                    Bayar</option>
-                                                                                <option value="verifikasi"
-                                                                                    {{ $pembayaran->status === 'verifikasi' ? 'selected' : '' }}>
-                                                                                    Verifikasi</option>
-                                                                                <option value="invalid"
-                                                                                    {{ $pembayaran->status === 'invalid' ? 'selected' : '' }}>
-                                                                                    Invalid</option>
-                                                                                <option value="terbayar"
-                                                                                    {{ $pembayaran->status === 'terbayar' ? 'selected' : '' }}>
-                                                                                    Terbayar</option>
-                                                                            </select>
-                                                                            <button type="submit"
-                                                                                class="btn btn-primary"
-                                                                                style="display: none;">Update</button>
-                                                                        </form>
-
-                                                                        <script>
-                                                                            function submitForm(selectElement) {
-                                                                                var form = selectElement.parentNode;
-                                                                                form.querySelector('button[type="submit"]')
-                                                                                    .click();
+                                                                        @php
+                                                                            $statuses = [
+                                                                                $pembayaran->status,
+                                                                                $pembayaran->sts_perssek,
+                                                                                $pembayaran->sts_pangpon,
+                                                                                $pembayaran->sts_perpon,
+                                                                                $pembayaran->sts_up
+                                                                            ];
+                                                                            if (count(array_unique($statuses)) === 1 && $statuses[0] === 'terbayar') {
+                                                                                $status_pembayaran = 'Lunas';
+                                                                                $badge = 'badge-success';
+                                                                            }  elseif (in_array('bayar', $statuses) && in_array('terbayar', $statuses)) {
+                                                                                $status_pembayaran = 'Mengangsur';
+                                                                                $badge = 'badge-warning';
+                                                                            } elseif (in_array('verifikasi', $statuses)) {
+                                                                                $status_pembayaran = 'Mengangsur';
+                                                                                $badge = 'badge-warning';
+                                                                            } else {
+                                                                                $status_pembayaran = 'Belum Lunas';
+                                                                                $badge = 'badge-danger';
                                                                             }
-                                                                        </script>
+                                                                        @endphp
+                                                                        <span class="badge {{ $badge }}">{{ $status_pembayaran }}</span>
                                                                     </td>
                                                                     <td>
-                                                                        <a href="{{ route('pembayaran.show', $pembayaran->id) }}"
-                                                                            class="btn btn-info">Lihat</a>
-                                                                        <a href="{{ route('admin.print', $pembayaran->id) }}"
-                                                                            class="btn btn-success">Cetak
-                                                                            <i class="fas fa-print"></i></a>
+                                                                        <a href="{{ route('pembayaran.showadmin', $pembayaran->id) }}" class="btn btn-info">Lihat</a>
                                                                     </td>
                                                                 </tr>
                                                             @endforeach
@@ -199,6 +184,24 @@
     </div>
 
     @extends('admin.footer')
+
+<script>
+    function filterData(jenjangPend) {
+        document.querySelectorAll('.pembayaran-row').forEach(row => {
+            if (row.getAttribute('data-jenjang') === jenjangPend) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+
+    function resetFilter() {
+        document.querySelectorAll('.pembayaran-row').forEach(row => {
+            row.style.display = '';
+        });
+    }
+</script>
 
     <!-- jQuery -->
     <script src="{{ asset('/') }}plugins/jquery/jquery.min.js"></script>

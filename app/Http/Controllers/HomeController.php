@@ -226,8 +226,9 @@ class HomeController extends Controller
         $adminCount = User::where('level', 'admin')->count();
         $panitiaCount = User::where('level', 'panitia')->count();
         $userCount = User::where('level', 'user')->count();
+        $siswaCount = Siswa::count();
 
-        return view('admin.dashboard', compact('adminCount', 'panitiaCount', 'userCount', 'user'));
+        return view('admin.dashboard', compact('adminCount', 'panitiaCount', 'userCount', 'user', 'siswaCount'));
     }
 
     /**

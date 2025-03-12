@@ -88,6 +88,21 @@
                                 <a href="{{ route('table', ['table' => 'admin']) }}" class="small-box-footer">More info
                                     <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
+                            <!-- small box -->
+                        <div class="small-box bg-blue">
+                                <div class="inner">
+                                    <h3>{{ $siswaCount }}</h3>
+                                    <p>Siswa SMP & MA</p>
+                                </div>
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75"
+                                        fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                                        <!-- SVG path -->
+                                    </svg>
+                                </div>
+                                <a href="{{ route('admin.siswa') }}" class="small-box-footer">More info
+                                    <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>
                         </div>
                         <!-- ./col -->
                         <div class="col-lg-3 col-6">
@@ -125,6 +140,7 @@
                                     <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
 

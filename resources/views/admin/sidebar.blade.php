@@ -63,7 +63,7 @@
                         <li class="nav-item">
                             <a href="{{ route('admin.pendaftar') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Pendaftar</p>
+                                <p>Calon Siswa</p>
                             </a>
                         </li>
                     </ul>

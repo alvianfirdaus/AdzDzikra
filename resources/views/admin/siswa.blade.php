@@ -1,6 +1,6 @@
 @extends('admin.app')
-<title>Siswa | Shaleh </title>
-<link rel="icon" href="{{ asset('dist/img/Logo Shaleh.png') }}">
+<title>Siswa | Adz-Dzikra </title>
+<link rel="icon" href="{{ asset('dist/img/adzdzikra.png') }}">
 @extends('admin.sidebar')
 <!--
 `body` tag options:
@@ -16,7 +16,7 @@
 
     <!-- Preloader -->
     <div class="preloader flex-column justify-content-center align-items-center">
-        <img class="animation__shake" src="{{ asset('/') }}dist/img/Logo Shaleh.png" alt="Sekolah Saleh Logo" height="170"
+        <img class="animation__shake" src="{{ asset('/') }}dist/img/adzdzikra.png" alt="Sekolah Saleh Logo" height="170"
             width="195">
     </div>
     <div class="wrapper">
@@ -64,14 +64,20 @@
                                 <br>
                                     <div class="card-header border-0">
                                     <h6>Berikut Tabel data siswa Sekolah Saleh yang sudah diseleksi</h6>
+                                    <!-- Tombol Filter -->
+                                        <div class="btn-group" role="group">
+                                                            <button type="button" class="btn btn-primary" onclick="filterData('MA')">MA</button>
+                                                            <button type="button" class="btn btn-primary" onclick="filterData('SMP')">SMP</button>
+                                                            <button type="button" class="btn btn-secondary" onclick="resetFilter()">Semua</button>
+                                        </div>
+                                        <div class="mb-3"></div>
                                         <br>
                                         <div class="table-responsive">
                                             @if (!empty($siswas) && count($siswas) > 0)
                                                 <table class="table table-bordered">
                                                     <thead>
                                                         <tr>
-                                                            <th>No</th>
-                                                            <th>NIS</th>
+                                                            <th>NIK</th>
                                                             <th>Name</th>
                                                             <th>Foto</th>
                                                             <th>Nama Wali</th>
@@ -84,9 +90,8 @@
                                                             $no = 1;
                                                         @endphp
                                                         @foreach ($siswas as $siswa)
-                                                            <tr>
-                                                                <td>{{ $siswa->id }}</td>
-                                                                <td>{{ $siswa->nis }}</td>
+                                                            <tr class="seleksi-row" data-jenjang="{{ $siswa->pendaftar->jenjangPend }}">
+                                                                <td>{{ $siswa->pendaftar->nik }}</td>
                                                                 <td>{{ $siswa->pendaftar->name }}</td>
                                                                 <td>
                                                                     @if ($siswa->pendaftar->foto)
@@ -152,6 +157,23 @@
     <!-- /.control-sidebar -->
 
     <!-- REQUIRED SCRIPTS -->
+<script>
+    function filterData(jenjangPend) {
+        document.querySelectorAll('.seleksi-row').forEach(row => {
+            if (row.getAttribute('data-jenjang') === jenjangPend) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+
+    function resetFilter() {
+        document.querySelectorAll('.seleksi-row').forEach(row => {
+            row.style.display = '';
+        });
+    }
+</script>
 
     <!-- jQuery -->
     <script src="{{ asset('/') }}plugins/jquery/jquery.min.js"></script>

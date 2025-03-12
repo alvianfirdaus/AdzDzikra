@@ -61,7 +61,15 @@
                         <div class="row">
                             <div class="col-lg">
                                 <div class="card">
+                                    
                                     <div class="card-header border-0">
+                                        <!-- Tombol Filter -->
+                                    <div class="btn-group" role="group">
+                                                            <button type="button" class="btn btn-primary" onclick="filterData('MA')">MA</button>
+                                                            <button type="button" class="btn btn-primary" onclick="filterData('SMP')">SMP</button>
+                                                            <button type="button" class="btn btn-secondary" onclick="resetFilter()">Semua</button>
+                                    </div>
+                                    <div class="mb-3"></div>
                                         <form action="{{ route('searchPSiswa') }}" method="GET"
                                             class="box-tools">
                                             <div class="input-group">
@@ -80,8 +88,7 @@
                                                 <table class="table table-bordered">
                                                     <thead>
                                                         <tr>
-                                                            <th>No</th>
-                                                            <th>NIS</th>
+                                                            <th>NIK</th>
                                                             <th>Name</th>
                                                             <th>Foto</th>
                                                             <th>Nama Wali</th>
@@ -94,9 +101,8 @@
                                                             $no = 1;
                                                         @endphp
                                                         @foreach ($siswas as $siswa)
-                                                            <tr>
-                                                                <td>{{ $siswa->id }}</td>
-                                                                <td>{{ $siswa->nis }}</td>
+                                                            <tr class="seleksi-row" data-jenjang="{{ $siswa->pendaftar->jenjangPend }}">
+                                                                <td>{{ $siswa->pendaftar->nik }}</td>
                                                                 <td>{{ $siswa->pendaftar->name }}</td>
                                                                 <td>
                                                                     @if ($siswa->pendaftar->foto)
@@ -163,6 +169,24 @@
     <!-- /.control-sidebar -->
 
     <!-- REQUIRED SCRIPTS -->
+
+<script>
+    function filterData(jenjangPend) {
+        document.querySelectorAll('.seleksi-row').forEach(row => {
+            if (row.getAttribute('data-jenjang') === jenjangPend) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+
+    function resetFilter() {
+        document.querySelectorAll('.seleksi-row').forEach(row => {
+            row.style.display = '';
+        });
+    }
+</script>
 
     <!-- jQuery -->
     <script src="{{ asset('/') }}plugins/jquery/jquery.min.js"></script>

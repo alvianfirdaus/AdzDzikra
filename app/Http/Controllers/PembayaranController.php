@@ -67,6 +67,12 @@ class PembayaranController extends Controller
 
         return view('pembayaran.showuser', compact('pembayaran'));
     }
+    public function showadmin($id)
+    {
+        $pembayaran = Pembayaran::findOrFail($id);
+
+        return view('pembayaran.showadmin', compact('pembayaran'));
+    }
 
     public function edit($id)
     {
@@ -117,7 +123,7 @@ class PembayaranController extends Controller
         if ($user->level === 'user') {
             return redirect()->route('pembayaran.showuser', $pembayaran->id) ->with('success', 'Status pembayaran berhasil dirubah.');
         } elseif ($user->level === 'admin') {
-            return redirect()->route('pembayaran.show')->with('success', 'Status pembayaran berhasil dirubah.');
+            return redirect()->route('pembayaran.showadmin', ['id' => $id])->with('success', 'Status pembayaran berhasil dirubah.');
         } elseif ($user->level === 'panitia') {
             return redirect()->route('pembayaran.show', ['id' => $id])->with('success', 'Status pembayaran berhasil dirubah.');
         }
@@ -163,7 +169,7 @@ class PembayaranController extends Controller
         if ($user->level === 'user') {
             return redirect()->route('pembayaran.showuser')->with('success', 'Status pembayaran berhasil dirubah.');
         } elseif ($user->level === 'admin') {
-            return redirect()->route('pembayaran.show')->with('success', 'Status pembayaran berhasil dirubah.');
+            return redirect()->route('pembayaran.showadmin', ['id' => $id])->with('success', 'Status pembayaran berhasil dirubah.');
         } elseif ($user->level === 'panitia') {
             return redirect()->route('pembayaran.show', ['id' => $id])->with('success', 'Status pembayaran berhasil dirubah.');
         }
@@ -209,7 +215,7 @@ class PembayaranController extends Controller
         if ($user->level === 'user') {
             return redirect()->route('pembayaran.showuser', $pembayaran->id) ->with('success', 'Status pembayaran berhasil dirubah.');
         } elseif ($user->level === 'admin') {
-            return redirect()->route('pembayaran.show')->with('success', 'Status pembayaran berhasil dirubah.');
+            return redirect()->route('pembayaran.showadmin', ['id' => $id])->with('success', 'Status pembayaran berhasil dirubah.');
         } elseif ($user->level === 'panitia') {
             return redirect()->route('pembayaran.show', ['id' => $id])->with('success', 'Status pembayaran berhasil dirubah.');
         }
@@ -255,7 +261,7 @@ class PembayaranController extends Controller
         if ($user->level === 'user') {
             return redirect()->route('pembayaran.showuser', $pembayaran->id) ->with('success', 'Status pembayaran berhasil dirubah.');
         } elseif ($user->level === 'admin') {
-            return redirect()->route('pembayaran.show')->with('success', 'Status pembayaran berhasil dirubah.');
+            return redirect()->route('pembayaran.showadmin', ['id' => $id])->with('success', 'Status pembayaran berhasil dirubah.');
         } elseif ($user->level === 'panitia') {
             return redirect()->route('pembayaran.show', ['id' => $id])->with('success', 'Status pembayaran berhasil dirubah.');
         }
@@ -301,7 +307,7 @@ class PembayaranController extends Controller
         if ($user->level === 'user') {
             return redirect()->route('pembayaran.showuser', $pembayaran->id) ->with('success', 'Status pembayaran berhasil dirubah.');
         } elseif ($user->level === 'admin') {
-            return redirect()->route('pembayaran.show')->with('success', 'Status pembayaran berhasil dirubah.');
+            return redirect()->route('pembayaran.showadmin', ['id' => $id])->with('success', 'Status pembayaran berhasil dirubah.');
         } elseif ($user->level === 'panitia') {
             return redirect()->route('pembayaran.show', ['id' => $id])->with('success', 'Status pembayaran berhasil dirubah.');
         }

@@ -15,8 +15,8 @@
                         <div class="form-group">
                             <label for="kategori_galeri">Kategori:</label>
                             <select class="form-control" name="kategori_galeri" required>
-                                <option value="TK">TK</option>
-                                <option value="Paud">Paud</option>
+                                <option value="SMP">SMP</option>
+                                <option value="MA">MA</option>
                             </select>
                         </div>
                         <div class="form-group">

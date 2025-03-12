@@ -195,7 +195,7 @@
                 <div class="col-6">
                     <div class="owl-carousel tk-carousel owl-theme">
                         @foreach ($gallery as $galeri)
-                            @if ($galeri->kategori_galeri == 'TK')
+                            @if ($galeri->kategori_galeri == 'SMP')
                                 <div class="item">
                                     <div class="card">
                                         <img src="{{ asset("storage/gallery/$galeri->gambar_galeri") }}"
@@ -213,7 +213,7 @@
                 <div class="col-6">
                     <div class="owl-carousel paud-carousel owl-theme">
                         @foreach ($gallery as $galeri)
-                            @if ($galeri->kategori_galeri == 'Paud')
+                            @if ($galeri->kategori_galeri == 'MA')
                                 <div class="item">
                                     <div class="card">
                                         <img src="{{ asset("storage/gallery/$galeri->gambar_galeri") }}"

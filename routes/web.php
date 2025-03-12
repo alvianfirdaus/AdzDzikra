@@ -106,6 +106,7 @@ Route::middleware(['checkLevel:admin'])->group(function () {
     Route::get('/admin/siswa', [SiswaController::class, 'dashboard'])->name('admin.siswa');
     Route::post('/admin/update-user', [HomeController::class, 'updateUser'])->name('admin.update-user');
     Route::get('/admin/edit/profile', [HomeController::class, 'editProfile'])->name('admin.edit.editProfile');
+    Route::get('/admin/pembayaran/{id}', [PembayaranController::class, 'showadmin'])->name('pembayaran.showadmin');
 }
 );
 

@@ -68,8 +68,7 @@
                                                 <table class="table table-bordered">
                                                     <thead>
                                                         <tr>
-                                                            <th>No</th>
-                                                            <th>NIS</th>
+                                                            <th>NIK</th>
                                                             <th>Name</th>
                                                             <th>Foto</th>
                                                             <th>Nama Wali</th>
@@ -83,8 +82,7 @@
                                                         @endphp
                                                         @foreach ($siswas as $siswa)
                                                             <tr>
-                                                                <td>{{ $siswa->id }}</td>
-                                                                <td>{{ $siswa->nis }}</td>
+                                                                <td>{{ $siswa->pendaftar->nik }}</td>
                                                                 <td>{{ $siswa->pendaftar->name }}</td>
                                                                 <td>
                                                                     @if ($siswa->pendaftar->foto)

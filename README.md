@@ -17,5 +17,13 @@ Tim Pengembang
 | 2   | Alvian Nur F             | Full Stack |
 | 3   | Aldyto Yohan Y           | Full Stack |
 
+### Link Google Meet
+<a href="https://meet.google.com/cyv-eqji-khh" target="_blank">
+  <img src="https://www.gstatic.com/meet/google_meet_primary_horizontal_2020q4_logo_be3f8c43950bd1e313525ada2ce0df44.svg" width="300" height="50" alt="Google Meet"> Join Google Meet
+</a>
+
+---
+
+
 
 Copyright TIM IT ADZ_DZIKRA @ 2025
