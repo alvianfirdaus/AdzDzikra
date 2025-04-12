@@ -106,7 +106,6 @@
                                 <table class="table">
                                     <thead class="thead-dark">
                                         <tr>
-                                            <th class="text-center fonts-big">No</th>
                                             <th class="text-center fonts-big">Kategori</th>
                                             <th class="text-center fonts-big">Keterangan</th>
                                             <th class="text-center fonts-big">Gambar</th>
@@ -116,7 +115,6 @@
                                     <tbody>
                                         @foreach ($gallery as $galeri)
                                             <tr>
-                                                <td class="text-center fonts-big">{{ $galeri->id }}</td>
                                                 <td class="text-center fonts-big">{{ $galeri->kategori_galeri }}
                                                 </td>
                                                 <td class="text-center fonts-big">{{ $galeri->keterangan_galeri }}

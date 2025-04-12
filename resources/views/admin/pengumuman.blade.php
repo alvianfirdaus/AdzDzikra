@@ -107,7 +107,6 @@
                                     <table class="table">
                                         <thead class="thead-dark">
                                             <tr>
-                                                <th class="text-center fonts-big">No</th>
                                                 <th class="text-center fonts-big">Tanggal</th>
                                                 <th class="text-center fonts-big">Judul</th>
                                                 <th class="text-center fonts-big">Deskripsi</th>
@@ -118,7 +117,6 @@
                                         <tbody>
                                             @foreach ($pengumumans as $pengumuman)
                                                 <tr>
-                                                    <td class="text-center fonts-big">{{ $pengumuman->id }}</td>
                                                     <td class="text-center fonts-big">{{ $pengumuman->tgl_pengumuman }}
                                                     </td>
                                                     <td class="text-center fonts-big">

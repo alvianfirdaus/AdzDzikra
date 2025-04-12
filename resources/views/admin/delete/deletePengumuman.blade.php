@@ -14,8 +14,8 @@
                         enctype="multipart/form-data">
                         @csrf
                         @method('DELETE')
-                        <div class="modal-body">Apakah Anda yakin ingin menghapus Pengumuman dengan nomor
-                            <b>{{ $pengumuman->id }}</b>?
+                        <div class="modal-body">Apakah Anda yakin ingin menghapus Pengumuman 
+                            <b>{{ $pengumuman->judul_pengumuman }}</b>?
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>

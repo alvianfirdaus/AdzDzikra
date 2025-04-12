@@ -140,7 +140,7 @@
 
                                                                             // Hitung jumlah masing-masing status
                                                                             $jumlah_terbayar = count(array_filter($statuses, fn($s) => $s === 'terbayar'));
-                                                                            $jumlah_verifikasi = count(array_filter($statuses, fn($s) => $s === 'verifikasi'));
+                                                                            $jumlah_verifikasi = count(array_filter($statuses, fn($s) => $s === 'terbayar'));
                                                                             $jumlah_bayar = count(array_filter($statuses, fn($s) => $s === 'bayar' || $s === 'invalid'));
                                                                         @endphp
 

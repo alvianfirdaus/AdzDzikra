@@ -7,17 +7,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Selamat Datang</title>
+    <title>Pendidikan | MAS ADZ-DZIKRA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="real.css">
-    <link rel="icon" type="image/icon" sizes="32x32" href="/landing/images/LogoShaleh.png">
+    <link rel="icon" type="image/icon" sizes="32x32" href="/landing/images/adzdzikra.png">
 </head>
 
 <body id="top-page">
     {{-- Navbar Section (Elang) --}}
     <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-color">
         <div class="container">
-            <img class="navbar-img" src="/landing/images/adzdzikra.png" sizes="32x32">
-            <p class="navbar-logo-text">MA-Adz-Dzikra</p>
+            <img class="navbar-img" src="/landing/images/mak.png" sizes="32x32">
+            <p class="navbar-logo-text">MAS ADZ-DZIKRA</p>
 
             <!-- Button Mobile -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -31,12 +32,6 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="{{ url('/') }}">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/') }}">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/') }}">Pengumuman</a>
-                    </li>
 
                     <!-- Dropdown Pendidikan -->
                     <li class="nav-item dropdown">
@@ -45,10 +40,10 @@
                             Pendidikan
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{{ route('landing.sd') }}">Pendidikan SD</a></li>
+                            <!-- <li><a class="dropdown-item" href="{{ route('landing.sd') }}">Pendidikan SD</a></li>
                             <li>
                                 <hr class="dropdown-divider" style="border-top: 1px solid rgba(255, 255, 255, 0.3);">
-                            </li>
+                            </li> -->
                             <li><a class="dropdown-item" href="{{ route('landing.smp') }}">Pendidikan SMP</a></li>
                             <li>
                                 <hr class="dropdown-divider" style="border-top: 1px solid rgba(255, 255, 255, 0.3);">
@@ -57,9 +52,6 @@
                         </ul>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#caramendaftar">Vidio Profil</a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/login">Login</a>
                     </li>
@@ -75,48 +67,35 @@
     <section class="box-luar">
         <div class="border-dalam">
             <div class="text-konten">
-                <h2>Judul Konten</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tortor nulla, posuere et ex sed,
-                    cursus malesuada odio. Fusce tempus nibh at justo eleifend, in tincidunt felis porta. Cras est
-                    augue, fermentum sagittis neque ac, placerat faucibus urna. Donec sollicitudin condimentum purus,
-                    sit amet sagittis est placerat eget. Donec aliquet nisi lorem, quis tempor lorem laoreet id. In
-                    gravida vulputate nulla eget ultricies. Donec venenatis nisl vel quam sodales porttitor.
-                    Pellentesque in pellentesque enim. Nam dignissim semper sem a condimentum. Duis ut enim augue.
-                    Praesent sagittis faucibus urna, in iaculis lorem scelerisque eget. Sed molestie magna a finibus
-                    pellentesque. Donec sed tristique magna, et tempor purus. Donec enim turpis, dignissim sed consequat
-                    sed, vestibulum suscipit felis. Donec maximus leo eget libero iaculis pharetra.
+                <h2>MAS ADZ-DZIKRA</h2>
+                <p>MAS AD-Dzikra Banyuwangi adalah Madrasah Aliyah dibawah naungan Yayasan Ad-Dzikra Banyuwangi yang 
+                    berkomitmen dalam mencetak generasi yang unggul dalam ilmu pengetahuan, teknologi, dan keislaman. 
+                    Dengan tenaga pendidik profesional dan kurikulum berbasis nilai-nilai Islam, kami membimbing siswa 
+                    untuk menjadi individu yang cerdas, berakhlak, serta siap menghadapi tantangan masa depan.
                 </p>
                 <!-- Button Register -->
         <div class="button-container">
-            <a href="{{ route('register') }}" class="btn-primary">Pendaftaran</a>
+            <a href="{{ route('register') }}" class="btn-primary">Daftar Sekarang</a>
         </div>
     
             </div>
             <div class="gambar-konten">
-                <img src="{{ asset('img/sd.jpg') }}" alt="Gambar SD">
+                <img src="{{ asset('img/ma1.png') }}" alt="Gambar SD">
             </div>
         </div>
     </section>
 
     <section class="visi-misi-container">
         <div class="visi">
-            <h2>Visi</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tortor nulla, posuere et ex sed,
-                cursus malesuada odio. Fusce tempus nibh at justo eleifend, in tincidunt felis porta. Cras est
-                augue, fermentum sagittis neque ac, placerat faucibus urna. Donec sollicitudin condimentum purus,
-                sit amet sagittis est placerat eget. Donec aliquet nisi lorem, quis tempor lorem laoreet id. In
-                gravida vulputate nulla eget ultricies. Donec venenatis nisl vel quam sodales porttitor.
-                Pellentesque in pellentesque enim. Nam dignissim semper sem a condimentum. Duis ut enim augue.
-                Praesent sagittis faucibus urna, in iaculis lorem scelerisque eget. Sed molestie magna a finibus
-                pellentesque. Donec sed tristique magna, et tempor purus. Donec enim turpis, dignissim sed consequat
-                sed, vestibulum suscipit felis. Donec maximus leo eget libero iaculis pharetra.</p>
+            <h2>Visi Adz-Dzikra</h2>
+            <p>Terbentuknya insan yang bertaqwa kepada Allah SWT, Berakhlaq mulia, Berilmu dan beramal secara berdaya bagi Islam, bangsa dan negara.</p>
         </div>
         <div class="misi">
             <h2>Misi</h2>
             <ul>
-                <li>Misi 1 melakukan ini itu</li>
-                <li>Misi 2 melakukan ini itu</li>
-                <li>Misi 3 melakukan ini itu</li>
+                <p>Mencetak kader Ahlusunnah Wal Jamaah Annahdiyyah yang sesungguhnya, menyiapkan calon Pemimpin yang memiliki jiwa Leadership, 
+                    membekali ilmu berbasis kitab para Ulama dalam mencapai pemahaman Al Qur'an dan Hadist sesuai sanad keilmuan para Ulama, menjaga, 
+                    memelihara dan mengamalkan Warisan Ulama dan Habaib.</p>
             </ul>
         </div>
     </section>
@@ -129,11 +108,11 @@
         <section id="caramendaftar">
             <div class="tengah">
                 <div class="kolom">
-                    <p class="deskripsi">Tutorial Pendaftaran</p>
+                    <p class="deskripsi">Gallery MAS ADZ-DZIKRA</p>
                 </div>
                 <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="534" height="300"
                     type="text/html"
-                    src="https://www.youtube.com/embed/7Hr7sxQ6vUg?autoplay=0&fs=0&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0&origin=https://youtubeembedcode.com">
+                    src="https://www.youtube.com/embed/-PUqs_edZZo" title="" frameBorder="0"   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowFullScreen><br>Powered by <a href="https://youtubeembedcode.com">
                     <div><small><a href="https://youtubeembedcode.com/en">
                                 <div><small><a href="https://youtubeembedcode.com/pl/">youtubeembedcode pl</a></small>
                                 </div>
@@ -164,17 +143,20 @@
         <footer class="footer py-4" id="kaki">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-4 text-lg-start">Copyright &copy;Tim IT Kel2. 2023</div>
-                    <div class="col-lg-4 my-3 my-lg-0">
-                        <a class="btn btn-light mx-2 ft-twitter" href="https://twitter.com/AnakSalehMalang?s=20"
-                            aria-label="Twitter"></a>
-                        <a class="btn btn-light mx-2 ft-facebook"
-                            href="https://web.facebook.com/pages/Anak-Saleh-El-school/206693209353991"
-                            aria-label="Facebook"></a>
-                        <a class="btn btn-light mx-2 ft-instagram"
-                            href="https://www.instagram.com/paudterpaduanaksalehmalang/?hl=id"
-                            aria-label="Instagram"></a>
-                    </div>
+                <div class="col-lg-4 text-lg-start">Copyright &copy; Tim IT Ponpes Adz-Dzikra 2025 - <span id="year"></span></div>
+                <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+                <div class="col-lg-4 my-3 my-lg-0">
+                    <a class="btn btn-light mx-2" href="https://www.youtube.com/@sanadzhebat" aria-label="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                    <a class="btn btn-light mx-2" href="https://www.tiktok.com/@sanadz_official" aria-label="TikTok">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                    <a class="btn btn-light mx-2" href="https://www.instagram.com/pp.adzdzikraa?igsh=MWVxc3kyNDh1N3pxYw==" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+
 
                     <div class="col-lg-4 text-lg-end">
                         <a class="link-light text-decoration-none me-3" href="#popup">Privacy Policy</a>
@@ -210,9 +192,10 @@
                         </div>
                     </div>
                 </div>
-                Yayasan Pendidikan Anak Saleh
+                Yayasan Pondok Pesantren Adz-Dzikra
             </div>
         </footer>
+
     </section>
 </body>
 

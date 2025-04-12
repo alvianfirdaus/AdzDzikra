@@ -51,7 +51,7 @@
                         <div class="container-fluid">
                             <div class="row mb-2">
                                 <div class="col-sm-6">
-                                    <h1 class="m-0">PPBD Manager | Shaleh</h1>
+                                    <h1 class="m-0">PPBD Manager | Adz-Dzikra</h1>
                                 </div><!-- /.col -->
                             </div><!-- /.row -->
                         </div><!-- /.container-fluid -->
@@ -69,7 +69,7 @@
                                         <div class="card">
                                             <div class="card-header border-0">
                                                 <div class="d-flex justify-content-between">
-                                                    <img src="/ppdb/dok.jpg" style="width: 100%; height: 100%;" /><br>
+                                                    <img src="/ppdb/dok1.png" style="width: 100%; height: 100%;" /><br>
                                                 </div>
                                             </div>
                                         </div>

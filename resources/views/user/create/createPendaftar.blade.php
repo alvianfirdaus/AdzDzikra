@@ -84,7 +84,7 @@
                             value="{{ Auth::user()->noHp }}" required>
                     </div>
                     <div class="mb-3">
-                        <label for="user_jenKel" class="form-label">Jenis Kelamin (User)</label>
+                        <label for="user_jenKel" class="form-label">Jenis Kelamin Wali</label>
                         <select class="form-control" id="user_jenKel" name="user_jenKel">
                             <option value="Perempuan" {{ Auth::user()->jenKel === 'Perempuan' ? 'selected' : '' }}>
                                 Perempuan

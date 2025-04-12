@@ -14,8 +14,8 @@
                         enctype="multipart/form-data">
                         @csrf
                         @method('DELETE')
-                        <div class="modal-body">Apakah Anda yakin ingin menghapus Galeri dengan nomor
-                            <b>{{ $galeri->id }}</b>?
+                        <div class="modal-body">Apakah Anda yakin ingin menghapus Galeri 
+                            <b>{{ $galeri->keterangan_galeri }}</b>?
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
